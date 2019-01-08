@@ -1,0 +1,31 @@
+@import '../../../../_sass/abstracts/variables';
+
+.footer {
+
+  &__social {
+    //border-left: $header-toolbar-border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    background: map-get($mainswatch , color-1);
+
+    & > a {
+      color: map-get($mainswatch , bg);
+      text-decoration: none;
+      width: 45px;
+      height: 45px;
+      display: block;
+      text-align: center;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        transition: all 300ms ease-in-out;
+        color: map-get($mainswatch, color-2);
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<section class="profile">
+  <div class="row">
+    <h1 class="profile__main-title">Profiel</h1>
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title-detail profile__tag-title">Huidig slaap doel</h1>
+      <div class="links-container">
+        <a class="card-link">Gemiddeld <span> {{hours_per_day}} uur slapen per
+            nacht
+            tegen {{end_date}} </span> </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title-detail">Persoonlijke gegevens</h1>
+      <div class="links-container">
+        <a class="card-link">Naam : {{user.name}} </a>
+        <a class="card-link">E-Mail : {{user.email}} </a>
+        <a class="card-link" [routerLink]="['/type-sleeper']">Slaap profiel :
+          <span> {{user.sleeptype}} </span> </a>
+      </div>
+    </div>
+    <div class="card">
+      <h1 class="card-title-detail">Handige links</h1>
+      <div class="links-container">
+        <a class="card-link" [routerLink]="['/friends']">Vriendenlijst </a>
+        <a class="card-link" [routerLink]="['/tips-tools']">Tips en tools die je leuk vindt </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+</section>

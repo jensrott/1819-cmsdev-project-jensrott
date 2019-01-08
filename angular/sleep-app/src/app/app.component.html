@@ -1,0 +1,19 @@
+<mat-sidenav-container class="offcanvas" fullscreen>
+  <mat-sidenav #sidenav mode="push" [(opened)]="opened" class="offcanvas__sidenav">
+    <app-sidebar (sidebarClose)="sidenav.close()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="offcanvas__content">
+    <app-header (sidebarToggle)="sidenav.toggle()"></app-header>
+    <!--Header-->
+
+    <main class="main">
+      <router-outlet></router-outlet> <!-- What we see main-->
+    </main>
+
+    <!--Footer-->
+    <app-footer></app-footer>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

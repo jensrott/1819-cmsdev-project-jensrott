@@ -1,0 +1,14 @@
+@import '../../../../_sass/abstracts/variables';
+
+.tips-tools {
+
+  // a {
+  //   color: map-get($mainswatch, color-4);
+  // }
+
+  &__heart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

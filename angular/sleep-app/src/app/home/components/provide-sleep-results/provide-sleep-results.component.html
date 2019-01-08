@@ -1,0 +1,29 @@
+<div>
+  <div class="center_input">
+    <div class="center_input">
+      <input class="current_date" [(ngModel)]="sleepresults.day" type="date">
+    </div>
+  </div>
+  <hr>
+  <h1 class="dialog-title">Wanneer ben je gisteren gaan slapen?</h1>
+  <div class="center_input">
+    <input type="time" id="sleep_time" class="form-control" required type="time" name="sleep_time" [(ngModel)]="sleepresults.sleep_time">
+  </div>
+  <h1 class="dialog-title">Hoe laat ben je vandaag opgestaan?</h1>
+  <div class="center_input">
+    <input type="time" id="wake_up_time" class="form-control" required type="time" name="wake_up_time" [(ngModel)]="sleepresults.wake_up_time">
+  </div>
+  <hr>
+  <div mat-dialog-content>
+
+    <h1 class="dialog-title">Huidig slaapdoel: <span> {{currentSleepGoal1}} uur/dag</span></h1>
+    <hr>
+    <h1 class="dialog-title">Gemiddelde slaap tot nu toe: <span> {{averageSleepResult}} uur/dag</span></h1>
+  </div>
+  <hr>
+  <div class="buttons-container">
+    <button class="dialog-btn" (click)="onCloseConfirm()">Opslaan</button>
+    <button class="dialog-btn close" (click)="onCloseCancel()">Sluiten</button>
+  </div>
+
+</div>

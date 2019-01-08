@@ -1,0 +1,31 @@
+<section class="photos-competition">
+  <div class="row">
+    <h1 class="photos-competition__main-title">Foto wedstrijd</h1>
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title-detail photos-competition__tag-title">#WokeUpLikeThis</h1>
+      <p class="card-text">Neem een foto van jezelf de eerste moment dat je opstaat.
+        De foto met de meeste likes krijgt een cadeau.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card" *ngFor="let photo_competition of photos_competition">
+      <div [innerHTML]="photo_competition?.title.rendered" class="card-title"></div>
+      <div [innerHTML]="photo_competition?.content.rendered" class="card-text"></div>
+      <div class="card-image"><img src="{{photo_competition.acf.image_photo}}" alt="image"></div>
+
+      <div class="photos-competition__heart-container" *ngFor="let author of photo_competition._embedded.author">
+        <p>Door : {{author.name}}</p>
+        <i (click)="addLike()" class="icon-heart ion-ios-heart-outline"></i>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/create-photos-competition']" class="btn-outside">Zelf een foto toevoegen</a>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+</section>

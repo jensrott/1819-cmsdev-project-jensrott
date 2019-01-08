@@ -1,0 +1,13 @@
+.form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__form-label-group {
+    display: flex;
+    justify-content: center;
+    input {
+      width: 100%;
+    }
+  }
+}

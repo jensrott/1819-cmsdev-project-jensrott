@@ -1,0 +1,20 @@
+<section class="type-sleeper">
+  <div class="row">
+    <h1 class="type-sleeper__main-title">Type Slaper</h1>
+  </div>
+  <div class="row">
+    <img class="type-sleeper-image" src="{{sleeptype_image}}" alt="type-sleeper-image">
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title-detail quiz__tag-title">Jij bent een {{sleeptype}} !</h1>
+      <p class="card-text">{{sleeptype_text}} </p>
+    </div>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/quiz']" class="btn-outside">Quiz</a>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+@import '../_sass/abstracts/variables';
+
+
+.offcanvas {
+
+  & .mat-drawer-backdrop { // Color that is at background when sidenav is open
+    background-color: rgba(0, 0, 0, 0.62);
+  }
+
+  &__sidenav { // Offcanvas sidenav
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: map-get($mainswatch, color-1);
+    width: 320px;
+    max-width: 70vw;
+  }
+
+  &__content {
+    background: map-get($mainswatch, bg);
+  }
+}

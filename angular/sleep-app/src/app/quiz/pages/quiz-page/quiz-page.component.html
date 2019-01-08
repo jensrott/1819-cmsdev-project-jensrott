@@ -1,0 +1,113 @@
+<section class="quiz">
+  <div class="row">
+    <h1 class="quiz__main-title">Quiz</h1>
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title-detail quiz__tag-title">Quiz type slaper</h1>
+      <p class="card-text">Vul de quiz in om je type slaper te kennen</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title-detail">Slaap...</h1>
+      <label for="question_1_1">
+        <input type="radio" id="question_1_1" name="question1" value="I &lt;3 it">
+        I &lt;3 it
+      </label>
+      <label for="question_1_2">
+        <input type="radio" id="question_1_2" name="question1" value="Is nodig maar ik heb er niet altijd even veel in in...">
+        Is nodig maar ik heb er niet altijd even veel in in...
+      </label>
+      <label for="question_1_3">
+        <input type="radio" id="question_1_3" name="question1" value="Zo nutteloos, ik doe liever iets anders!">
+        Zo nutteloos, ik doe liever iets anders!
+      </label>
+    </div>
+    <div class="card">
+      <h1 class="card-title-detail">Lang uitslapen in het weekend...</h1>
+      <label for="question_2_1">
+        <input type="radio" id="question_2_1" name="question2" value="Sowiesooo! Mij zie je voor 10u niet
+        verschijnen!">Sowiesooo!
+        Mij zie je voor 10u niet
+        verschijnen!
+      </label>
+      <label for="question_2_2">
+        <input type="radio" id="question_2_2" name="question2" value="Hoeft niet, ik word wakker op mijn
+        vast uur.">Hoeft
+        niet, ik word wakker op mijn
+        vast uur.
+      </label>
+      <label for="question_2_3">
+        <input type="radio" id="question_2_3" name="question2" value="Is voor mij niet later dan 9u-9u30">Is voor mij
+        niet later dan 9u-9u30
+      </label>
+    </div>
+    <div class="card">
+      <h1 class="card-title-detail">Slaap jij makkelijk in?</h1>
+      <label for="question_3_1">
+        <input type="radio" id="question_3_1" name="question3" value="Ik lig vaak nog lang te woelen en te piekeren.">
+        Ik lig vaak nog lang te woelen en te piekeren.
+      </label>
+      <label for="question_3_2">
+        <input type="radio" id="question_3_2" name="question3" value="Ik slaap relatief snel in.">
+        Ik slaap relatief snel in.
+      </label>
+      <label for="question_3_3">
+        <input type="radio" id="question_3_3" name="question3" value="Ik slaap vrijwel meteen in.">
+        Ik slaap vrijwel meteen in.
+      </label>
+    </div>
+    <div class="card">
+      <h1 class="card-title-detail">Ochtendmodus</h1>
+      <label for="question_4_1">
+        <input type="radio" id="question_4_1" name="question4" value="Zombie">
+        Zombie
+      </label>
+      <label for="question_4_2">
+        <input type="radio" id="question_4_2" name="question4" value="Fris als 'n vis">
+        Fris als 'n vis
+      </label>
+      <label for="question_4_3">
+        <input type="radio" id="question_4_3" name="question4" value="Groggy maar dat gaat snel over">
+        Groggy maar dat gaat snel over
+      </label>
+    </div>
+    <div class="card">
+      <h1 class="card-title-detail">Overdag</h1>
+      <label for="question_5_1">
+        <input type="radio" id="question_5_1" name="question5" value="Blijf ik de hele dag door geeuwen.">
+        Blijf ik de hele dag door geeuwen.
+      </label>
+      <label for="question_5_2">
+        <input type="radio" id="question_5_2" name="question5" value="Kom ik er meestal tegen de middag wel door.">
+        Kom ik er meestal tegen de middag wel door.
+      </label>
+      <label for="question_5_3">
+        <input type="radio" id="question_5_3" name="question5" value="Word ik tegen de avond goed moe.">
+        Word ik tegen de avond goed moe.
+      </label>
+    </div>
+    <div class="card">
+      <h1 class="card-title-detail">Screen addict or angel</h1>
+      <label for="question_6_1">
+        <input type="radio" id="question_6_1" name="question6" value="#Gamingislive: tot ´s avonds laat!">
+        #Gamingislive: tot ´s avonds laat!
+      </label>
+      <label for="question_6_2">
+        <input type="radio" id="question_6_2" name="question6" value="#nophone: Mijn GSM komt mijn kamer niet in!">
+        #nophone: Mijn GSM komt mijn kamer niet in!
+      </label>
+      <label for="question_6_3">
+        <input type="radio" id="question_6_3" name="question6" value="#Netlix: all night long">
+        #Netlix: all night long
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/type-sleeper']" class="btn-outside" (click)="sendQuiz()">Invullen</a>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+</section>

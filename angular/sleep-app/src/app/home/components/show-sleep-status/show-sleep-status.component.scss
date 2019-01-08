@@ -1,0 +1,11 @@
+@import '../../../../_sass/abstracts/variables';
+
+.cross-close {
+  display: flex;
+  justify-content: flex-end;
+}
+
+span {
+  color: map-get($mainswatch, color-4);
+  font-weight: bold;
+}

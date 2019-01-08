@@ -1,0 +1,16 @@
+@import '../../../../_sass/abstracts/variables';
+
+.photos-competition {
+  .card-image {
+    img {
+      width: auto;
+      height: 166px;
+    }
+    
+  }
+  &__heart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

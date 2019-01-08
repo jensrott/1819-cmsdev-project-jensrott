@@ -1,0 +1,37 @@
+@import '../../../../_sass/abstracts/variables';
+
+hr {
+  margin: 5px -24px 20px;
+}
+
+.center_input {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dialog-title {
+  color: map-get($mainswatch, color-7);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.dialog-btn {
+  background: map-get($mainswatch, color-2);
+  color: map-get($mainswatch, color-3);
+  border-radius: $button-border-radius;
+  box-shadow: $card-background-boxshadow;
+  border: 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.close {
+  background: map-get($mainswatch, color-6);
+}
+

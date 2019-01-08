@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import 
+    'abstracts/variables',
+    'abstracts/mixins',
+    'abstracts/functions',
+    'abstracts/helpers';
+
+@import 
+    'base/core',
+    'base/fonts';

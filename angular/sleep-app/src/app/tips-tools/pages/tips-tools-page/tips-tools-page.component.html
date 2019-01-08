@@ -1,0 +1,22 @@
+<section class="tips-tools">
+  <div class="row">
+    <h1 class="tips-tools__main-title">Tips en tools</h1>
+  </div>
+  <div class="row">
+    <div class="card" *ngFor="let tip_tool of tips_tools">
+      <div [innerHTML]="tip_tool?.title.rendered" class="card-title"></div>
+      <div [innerHTML]="tip_tool?.content.rendered" class="card-text"></div>
+
+      <div class="tips-tools__heart-container" *ngFor="let author of tip_tool._embedded.author">
+        <p>Door : {{author.name}}</p>
+        <i (click)="addLike()" class="icon-heart ion-ios-heart-outline"></i>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/create-tips-tools']" class="btn-outside">Maak</a>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+</section>

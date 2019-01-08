@@ -1,0 +1,35 @@
+<audio src="../../../assets/sounds/fire.mp3" id="fire"></audio>
+<audio src="../../../assets/sounds/garden.mp3" id="garden"></audio>
+<audio src="../../../assets/sounds/rain.mp3" id="rain"></audio>
+<audio src="../../../assets/sounds/seaside.mp3" id="seaside"></audio>
+<audio src="../../../assets/sounds/storm.mp3" id="storm"></audio>
+<audio src="../../../assets/sounds/wind.mp3" id="wind"></audio>
+
+<div class="calming-sounds">
+  <div class="row">
+    <div class="card">
+      <img (click)="checkFire()" src="../../../assets/images/fire.svg" alt="fire">
+    </div>
+    <div class="card">
+      <img (click)="checkGarden()" src="../../../assets/images/garden.svg" alt="garden">
+    </div>
+    <div class="card">
+      <img (click)="checkRain()" src="../../../assets/images/rain.svg" alt="rain">
+    </div>
+    <div class="card">
+      <img (click)="checkSeaSide()" src="../../../assets/images/seaside.svg" alt="seaside">
+    </div>
+    <div class="card">
+      <img (click)="checkStorm()" src="../../../assets/images/storm.png" alt="storm">
+    </div>
+    <div class="card">
+      <img (click)="checkWind()" src="../../../assets/images/wind.svg" alt="wind">
+    </div>
+  </div>
+  <div class="row">
+    <a class="btn-outside" (click)="stopAll()">Pauzeer Allemaal</a>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+/* Screen sizes depending on bootstrap grid */ 
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+/* Screen sizes from developer tools */
+$screen-phone: 480px;
+$screen-ipad: 768px;
+$screen-ipad-pro: 1024px;
+
+/* Choose self max or min width */
+@mixin self($media) {
+    @media ($media) {
+      @content;
+    }
+}
+
+@mixin phone { 
+    @media (max-width: #{$screen-phone}) {
+        @content;
+    }
+}
+
+@mixin ipad { 
+    @media (max-width: #{$screen-ipad}) {
+        @content;
+    }
+}
+
+@mixin ipad-pro { 
+    @media (max-width: #{$screen-ipad-pro}) {
+        @content;
+    }
+}
+
+// Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+

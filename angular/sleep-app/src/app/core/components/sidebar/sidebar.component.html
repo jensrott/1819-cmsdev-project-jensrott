@@ -1,0 +1,52 @@
+<!-- Upper part cross -->
+<div class="sidebar__toolbar">
+  <a class="sidebar__close" (click)="close()" aria-label="Close sidebar"><i class="icon ion-close"></i></a>
+</div>
+
+<!-- Real nav -->
+<nav class="sidebar__navigation">
+  <!-- <ul>
+    <li>
+      <a routerLink="/home" (click)="close()">Home</a>
+    </li>
+    <li>
+      <a routerLink="/profile" (click)="close()">Profile</a>
+    </li>
+    <li>
+      <a routerLink="/login" (click)="close()">Login</a>
+    </li>
+    <li>
+      <a routerLink="/register" (click)="close()">Register</a>
+    </li>
+    <li>
+      <a routerLink="/quiz" (click)="close()">Quiz</a>
+    </li>
+  </ul> -->
+
+  <ul>
+    <li>
+      <a routerLink="/home" (click)="close()">Home</a>
+    </li>
+    <li>
+      <a routerLink="/profile" (click)="close()">Profiel</a>
+    </li>
+    <li>
+      <a routerLink="/create-sleep-goals" (click)="close()">Slaapdoelen</a>
+    </li>
+    <li>
+      <a routerLink="/quiz" (click)="close()">Quiz</a>
+    </li>
+    <li>
+      <a routerLink="/tips-tools" (click)="close()">Tips en Tools</a>
+    </li>
+    <li>
+      <a routerLink="/photos-competition" (click)="close()">Fotowedstrijd</a>
+    </li>
+    <li>
+      <a routerLink="/calming-sounds" (click)="close()">Kalmerende geluiden</a>
+    </li>
+    <li>
+      <a (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</nav>

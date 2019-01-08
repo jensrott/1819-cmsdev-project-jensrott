@@ -1,0 +1,19 @@
+<form class="form" (ngSubmit)="login(user.email, user.password)">
+  <h1>Log in</h1>
+  <div class="form__form-label-group">
+    <input type="text" id="email" class="form-control" placeholder="E-mailadres" required type="text" name="email"
+      [(ngModel)]="user.email">
+  </div>
+  <div class="form__form-label-group">
+    <input type="password" id="password" class="form-control" placeholder="Wachtwoord" [(ngModel)]="user.password" name="password">
+  </div>
+  <div class="form__form-label-group">
+    <div [innerHTML]="error"></div>
+  </div>
+  <div class="form__form-label-group">
+    <a (click)="login(user.email, user.password)" class="btn-outside" type="submit">Login</a>
+  </div>
+  <div class="form__no-profile">
+    <a [routerLink]="['/register']">Heb je geen account? <span>Registreer</span></a>
+  </div>
+</form>

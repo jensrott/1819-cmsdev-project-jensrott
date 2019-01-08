@@ -1,0 +1,29 @@
+<form class="form" (ngSubmit)="register(user.username, user.firstname, user.lastname, user.email, user.password)">
+  <h1>Registreer</h1>
+  <div class="form__form-label-group">
+    <input type="text" id="username" class="form-control" placeholder="Gebruikersnaam" required autofocus type="text"
+      name="username" [(ngModel)]="user.name">
+  </div>
+  <div class="form__form-label-group">
+    <input type="text" id="firstname" class="form-control" placeholder="Voornaam" [(ngModel)]="user.firstname" name="firstname">
+  </div>
+  <div class="form__form-label-group">
+    <input type="text" id="lastname" class="form-control" placeholder="Achternaam" [(ngModel)]="user.lastname" name="lastname">
+  </div>
+  <div class="form__form-label-group">
+    <input type="email" id="email" class="form-control" placeholder="E-mailadres" [(ngModel)]="user.email" name="email">
+  </div>
+  <div class="form__form-label-group">
+    <input type="password" id="password" class="form-control" placeholder="Wachtwoord" [(ngModel)]="user.password" name="password">
+  </div>
+  <div class="form__form-label-group">
+    <div [innerHTML]="error"></div>
+  </div>
+  <div class="form__form-label-group">
+    <a (click)="register(user.name, user.firstname, user.lastname, user.email, user.password)" class="btn-outside"
+      type="submit">Registreer</a>
+  </div>
+  <div class="form__login">
+    <a [routerLink]="['/login']">Al een account? <span>Inloggen</span></a>
+  </div>
+</form>
