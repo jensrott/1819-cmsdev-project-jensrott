@@ -31,7 +31,7 @@ export class HomePageComponent implements OnInit {
   private num_acc: any;
   private currentSleepGoal: any;
   private currentSleepGoal1: any;
-  private num = 4;
+  private num = 2; // The number of days on which the average is calculated, after three days we get a result
   private i: number;
 
   constructor(private authService: AuthenticationService,

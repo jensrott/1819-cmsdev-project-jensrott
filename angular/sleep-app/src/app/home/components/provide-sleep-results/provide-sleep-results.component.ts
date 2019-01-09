@@ -51,7 +51,7 @@ export class ProvideSleepResultsComponent implements OnInit {
       this.sleepresults1 = data;
       this.provideSleepResultsService.createSleepResultsAcf(this.sleepresults1.id, // Write the ACF fields in the Sleep-goal PostType
         this.sleepresults.day, this.sleepresults.sleep_time, this.sleepresults.wake_up_time).subscribe(data1 => {
-          this.acf_fields = data;
+          this.acf_fields = data1;
           console.log(data1);
           this.router.navigate(['/home']);
         },

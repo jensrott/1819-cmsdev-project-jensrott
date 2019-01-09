@@ -3,148 +3,8 @@
 /**
  * Proper way to enqueue scripts and styles
  */
-// add_action( 'init', function() {
-//     header( 'Access-Control-Allow-Headers: Content-Disposition, Authorization, Content-Type' );
-//     header( 'Access-Control-Allow-Origin: *' );
-//     header( 'Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH');
-//  });
-
-//  add_action( 'rest_pre_serve_request', function() {
-//     header( 
-//     'Access-Control-Allow-Headers: Content-Disposition, Authorization, Content-Type',
-//     'Access-Control-Allow-Origin: http://localhost:4200', 
-//     'Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH' );
-// });
-
-// add_action( 'rest_pre_serve_request', function() {
-//     header( 'Access-Control-Allow-Headers: Authorization, Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Methods' );
-// });
 
 /**** Post Types and Taxonomies ****/
-
-/**** Recipes ****/
-
-/* Post Type */
-function create_recipes_posttype() {
-
-  $labels = array(
-      'name' => __('Recipes'),
-      'array' => __('Recipes'),
-      'singular_name' => __('Recipes'),
-      'add_new' => __('Add New Recipes'),
-      'all_items' => __('All Recipes'),
-      'add_new_item' => __('Add New Recipes'),
-      'edit_item' => __('Edit Recipes'),
-  );
-
-  $args = array(
-      'description' => 'All the recipes!',
-      'labels' => $labels,
-      'public' => true,
-      'has_archive' => true,
-      'publicly_queryable' => true,
-      'query_var' => true,
-      'capability_type' => 'post', // Take over everything that is already in post
-      'hierarchical' => false,
-      'supports' => array(
-          'title',
-          'editor',
-          'except',
-          'thumbnail',
-          'revisions',
-          'custom-fields'
-      ),
-      
-      'menu_position' => 5,
-      'exclude_from_search' => false
-  );
-
-  register_post_type('recipes', $args);
-}
-
-add_action('init', 'create_recipes_posttype');
-
-/* Taxonomies Recipes */
-function create_recipes_taxonomies() {
-
-  // Categories
-  $labels = array(
-      'name'              => _x('Categories', 'taxonomy general name', 'textdomain'),
-      'singular_name'     => _x('Category', 'taxonomy singular name', 'textdomain'),
-      'search_items'      => __('Search Recipe Categories', 'textdomain'),
-      'all_items'         => __('All Recipe Categories', 'textdomain'),
-      'parent_item'       => __('Parent Recipe Category', 'textdomain'),
-      'parent_item_colon' => __('Parent Recipe Category:', 'textdomain'),
-      'edit_item'         => __('Edit Recipe Category', 'textdomain'), 
-      'update_item'       => __('Update Recipe Category', 'textdomain'),
-      'add_new_item'      => __('Add New Recipe Category', 'textdomain'),
-      'new_item_name'     => __('New Recipe Category', 'textdomain'),
-      'menu_name'         => __('Categories', 'textdomain'),
-  );
-
-  $args = array(
-      'hierarchical' => true,
-      'labels' => $labels,
-      'show_in_rest'      => true,
-      'show_ui'           => true,
-    'show_admin_column' => true,
-    'query_var'         => true,
-  );
-
-  register_taxonomy('category', 'recipes', $args);
-
-  // Allergens
-  $labels = array(
-      'name'              => _x('Allergens', 'taxonomy general name', 'textdomain'),
-      'singular_name'     => _x('Allergens', 'taxonomy singular name', 'textdomain'),
-      'search_items'      => __('Search Recipe Allergens', 'textdomain'),
-      'all_items'         => __('All Recipe Allergens', 'textdomain'),
-      'parent_item'       => __('Parent Recipe Allergy', 'textdomain'),
-      'parent_item_colon' => __('Parent Recipe Allergy:', 'textdomain'),
-      'edit_item'         => __('Edit Recipe Allergy', 'textdomain'), 
-      'update_item'       => __('Update Recipe Allergy', 'textdomain'),
-      'add_new_item'      => __('Add New Recipe Allergy', 'textdomain'),
-      'new_item_name'     => __('New Recipe Allergy', 'textdomain'),
-      'menu_name'         => __('Allergy', 'textdomain'),
-  );
-
-  $args = array(
-      'hierarchical' => true,
-      'labels' => $labels,
-      'show_ui'           => true,
-  'show_admin_column' => true,
-  'query_var'         => true,
-  );
-
-  register_taxonomy('allergens', 'recipes', $args);
-
-  // Difficulties
-  $labels = array(
-      'name'              => _x('Difficulties', 'taxonomy general name', 'textdomain'),
-      'singular_name'     => _x('Difficulties', 'taxonomy singular name', 'textdomain'),
-      'search_items'      => __('Search Recipe Difficulties', 'textdomain'),
-      'all_items'         => __('All Recipe Difficulties', 'textdomain'),
-      'parent_item'       => __('Parent Recipe Difficulty', 'textdomain'),
-      'parent_item_colon' => __('Parent Recipe Difficulty:', 'textdomain'),
-      'edit_item'         => __('Edit Recipe Difficulty', 'textdomain'), 
-      'update_item'       => __('Update Recipe Difficulty', 'textdomain'),
-      'add_new_item'      => __('Add New Recipe Difficulty', 'textdomain'),
-      'new_item_name'     => __('New Recipe Difficulty', 'textdomain'),
-      'menu_name'         => __('Difficulty', 'textdomain'),
-  );
-
-  $args = array(
-      'hierarchical' => true,
-      'labels' => $labels,
-      'show_ui'           => true,
-      'show_admin_column' => true,
-      'query_var'         => true,
-  );
-
-  register_taxonomy('difficulties', 'recipes', $args);
-}
-
-add_action('init', 'create_recipes_taxonomies', 0);
 
 /* Friends Posttype */
 function create_friends_posttype() { 
@@ -184,38 +44,6 @@ function create_friends_posttype() {
   register_post_type('friends', $args);
 }
 add_action('init', 'create_friends_posttype', 0);
-
-/* Taxonomies friends */
-function create_friends_taxonomies() { 
-  // Likes
-//   $labels = array(
-//     'name'              => _x('Likes', 'taxonomy general name', 'textdomain'),
-//     'singular_name'     => _x('Likes', 'taxonomy singular name', 'textdomain'),
-//     'search_items'      => __('Search Friends Likes', 'textdomain'),
-//     'all_items'         => __('All Friends Likes', 'textdomain'),
-//     'parent_item'       => __('Parent Friends Like', 'textdomain'),
-//     'parent_item_colon' => __('Parent Friends Like:', 'textdomain'),
-//     'edit_item'         => __('Edit Friends Like', 'textdomain'), 
-//     'update_item'       => __('Update Friends Like', 'textdomain'),
-//     'add_new_item'      => __('Add New Friends Like', 'textdomain'),
-//     'new_item_name'     => __('New Friends Like', 'textdomain'),
-//     'menu_name'         => __('Likes', 'textdomain'),
-// );
-
-//   $args = array(
-//       'hierarchical' => true,
-//       'labels' => $labels,
-//       'show_ui'           => true,
-//       'show_admin_column' => true,
-//       'query_var'         => true,
-//   );
-
-//   register_taxonomy('likes', 'friends', $args);
-
-  // other....
-}
-
-add_action('init', 'create_friends_taxonomies');
 
 
 /**** Tips and Tools ****/
@@ -374,10 +202,6 @@ function create_tips_tools_posttype() {
 
   add_action('init', 'create_sleep_results_posttype');
 
-//   function add_cors_http_header(){
-//     header("Access-Control-Allow-Origin: *");
-//     }
-//   add_action('init','add_cors_http_header');
 
 /**** Tips and Tools ****/
 
