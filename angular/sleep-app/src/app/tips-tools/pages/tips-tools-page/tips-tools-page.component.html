@@ -7,8 +7,13 @@
       <div [innerHTML]="tip_tool?.title.rendered" class="card-title"></div>
       <div [innerHTML]="tip_tool?.content.rendered" class="card-text"></div>
 
-      <div class="tips-tools__heart-container" *ngFor="let author of tip_tool._embedded.author">
-        <p>Door : {{author.name}}</p>
+      <a routerLink="/tips-tools/{{ tip_tool.id }}">Link</a>
+
+      <div
+        class="tips-tools__heart-container"
+        *ngFor="let author of tip_tool._embedded.author"
+      >
+        <p>Door : {{ author.name }}</p>
         <i (click)="addLike()" class="icon-heart ion-ios-heart-outline"></i>
       </div>
     </div>

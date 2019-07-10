@@ -1,5 +1,5 @@
-@import '../../../../_sass/abstracts/mixins';
-@import '../../../../_sass/abstracts/variables';
+@import "../../../../_sass/abstracts/mixins";
+@import "../../../../_sass/abstracts/variables";
 
 .header {
   display: flex;
@@ -7,9 +7,15 @@
   justify-content: space-between;
   background: map-get($mainswatch, color-1);
 
+  .logout-button {
+    cursor: pointer;
+  }
+
   &__logo {
     img {
-      @include phone { display: none; }
+      @include phone {
+        display: none;
+      }
       width: 49px;
       height: 49px;
       margin: 1rem;
@@ -17,14 +23,16 @@
   }
 
   &__hamburger {
-    @include phone { display: flex; }
+    @include phone {
+      display: flex;
+    }
     cursor: hand;
-  
-  // border-right: $header-toolbar-border;
+
+    // border-right: $header-toolbar-border;
 
     box-sizing: border-box;
     //height: 100%;
-  // padding: $header-toolbar-padding;
+    // padding: $header-toolbar-padding;
 
     font-size: 40px;
     text-decoration: none;
@@ -57,15 +65,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    & > a { 
+    & > a {
       color: map-get($mainswatch, color-7);
       font-weight: bold;
       padding: 1rem;
       font-size: 1rem;
     }
-    @include phone { // Phones
-       display: none;
+    @include phone {
+      // Phones
+      display: none;
     }
   }
 }
-

@@ -1,168 +1,170 @@
 /* Helper functions we use througout the whole site */
-@import './variables';
+@import "./variables";
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .flex-column {
-	display: flex;
-    flex-direction:column;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
-	display: flex;
-    flex-direction:row;
-    justify-content: center;
-    flex-wrap: wrap; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.flex-45 {
+  flex: 0 1 calc(45% - 1em);
 }
 
 .center-text {
-    text-align: center;
+  text-align: center;
 }
 
 .card {
-    background-color:  map-get($mainswatch, color-1);
-    border-radius: $card-border-radius;
-    box-shadow: $card-background-boxshadow;
-    margin: 1rem;
-    padding: 1rem;
-    width: 100%;
+  background-color: map-get($mainswatch, color-1);
+  border-radius: $card-border-radius;
+  box-shadow: $card-background-boxshadow;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  color: map-get($mainswatch, color-7);
+
+  .card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
     color: map-get($mainswatch, color-7);
+    margin-top: 0;
+  }
 
-    .card-title {
-        font-size: 1.8rem;
-        font-weight: bold;
-        display: flex;
-        justify-content: flex-start;
-        color: map-get($mainswatch, color-7);
-        margin-top: 0;
-    }
+  .card-title-detail {
+    font-size: 1.4rem;
+    display: flex;
+    text-align: center;
+    color: map-get($mainswatch, color-7);
+    margin-top: 0;
+  }
 
-    .card-title-detail {
-        font-size: 1.4rem;
-        display: flex;
-        text-align: center;
-        color: map-get($mainswatch, color-7);
-        margin-top: 0; 
-    }
+  .card-text {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-    .card-text {
-        display: flex;
-        justify-content: flex-start;
-    }
+  .links-container {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .links-container {
-        display: flex;
-        flex-direction: column;
-        
-    }
+  .card-link {
+    border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
+    color: map-get($mainswatch, color-7);
+  }
 
-    .card-link {
-        border-bottom: 1px solid #000;
-        margin-bottom: 1rem;
-        color: map-get($mainswatch, color-7);
-        
+  .card-author {
+    a {
+      color: map-get($mainswatch, color-4);
     }
-
-    .card-author {
-        a {
-            color: map-get($mainswatch, color-4);
-        }
-    }
+  }
 }
 
 /* Button outside of cards */
 .btn-outside {
-    color: map-get($mainswatch, color-3);
-    background-color: map-get($mainswatch, color-4);
-    border-radius: $button-border-radius;
-    border: 0;
-    width: 100%;
-    height: auto;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem;
-    cursor: pointer;
+  color: map-get($mainswatch, color-3);
+  background-color: map-get($mainswatch, color-4);
+  border-radius: $button-border-radius;
+  border: 0;
+  width: 100%;
+  height: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
 
-    &:hover {
-        transition: all 300ms ease-in-out;
-        background-color: map-get($mainswatch, color-2);
-        cursor: pointer;
-    }
-      
-    &:active {
-        transform: scale(.95);
-        cursor: pointer;
-    }
+  &:hover {
+    transition: all 300ms ease-in-out;
+    background-color: map-get($mainswatch, color-2);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    cursor: pointer;
+  }
 }
 
 /* Button on cards */
 .btn-card {
-    color: map-get($mainswatch, color-3);
-    background-color: map-get($mainswatch, color-2);
-    border-radius: $button-border-radius;
-    border: 0;
-    width: 100%;
-    height: auto;
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem;
-    box-shadow: $card-background-boxshadow;
+  color: map-get($mainswatch, color-3);
+  background-color: map-get($mainswatch, color-2);
+  border-radius: $button-border-radius;
+  border: 0;
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: $card-background-boxshadow;
+  cursor: pointer;
+  &:hover {
+    transition: all 300ms ease-in-out;
+    background-color: map-get($mainswatch, color-4);
     cursor: pointer;
-    &:hover {
-        transition: all 300ms ease-in-out;
-        background-color: map-get($mainswatch, color-4);
-        cursor: pointer;
-    }
-      
-    &:active {
-        transform: scale(.95);
-        cursor: pointer;
-    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+    cursor: pointer;
+  }
 }
 
 /* Delete buttons */
 .btn-delete {
-    color: map-get($mainswatch, color-3);
-    background-color: map-get($mainswatch, color-6);
-    border-radius: $button-border-radius;
-    border: 0;
-    width: 100%;
-    height: auto;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem; 
-    cursor: pointer; 
-    &:active {
-        transform: scale(.95);
-        cursor: pointer;
-    }
+  color: map-get($mainswatch, color-3);
+  background-color: map-get($mainswatch, color-6);
+  border-radius: $button-border-radius;
+  border: 0;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.95);
+    cursor: pointer;
+  }
 }
 
 /* Global styles for inputs */
 input {
-    color: $base-color;
-    font-size: $base-font-size;
-    font-family: $base-font-family;
-    background-color: map-get($mainswatch, color-1);
-    border-radius: $input-border-radius;
-    border: $input-border-color;
-    box-sizing: border-box;  
-    margin: 1rem;
-    padding: 1rem;
+  color: $base-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  background-color: map-get($mainswatch, color-1);
+  border-radius: $input-border-radius;
+  border: $input-border-color;
+  box-sizing: border-box;
+  margin: 1rem;
+  padding: 1rem;
 }

@@ -5,6 +5,7 @@ import { AppRoutingModule } from '../app-routing.module';
 
 import { TipsToolsPageComponent } from './pages/tips-tools-page/tips-tools-page.component';
 import { CreateTipsToolsPageComponent } from './pages/create-tips-tools-page/create-tips-tools-page.component';
+import { TipsToolsDetailPageComponent } from './pages/tips-tools-detail-page/tips-tools-detail-page.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { CreateTipsToolsPageComponent } from './pages/create-tips-tools-page/cre
     FormsModule,
     AppRoutingModule,
   ],
-  declarations: [TipsToolsPageComponent, CreateTipsToolsPageComponent],
+  declarations: [TipsToolsPageComponent, CreateTipsToolsPageComponent, TipsToolsDetailPageComponent],
   exports: [TipsToolsPageComponent],
 })
 export class TipsToolsModule { }

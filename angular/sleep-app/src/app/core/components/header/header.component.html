@@ -1,19 +1,28 @@
 <header class="header" role="header">
   <section class="header__navigation">
-    <a class="header__logo"><img src="../../../../assets/images/moon.png" alt="logo"></a>
-    <a class="header__hamburger hidden" (click)="sidebarOpen()"><i class="icon ion-navicon"></i></a>
+    <a class="header__logo" [routerLink]="['/home']"
+      ><img src="../../../../assets/images/moon.png" alt="logo"
+    /></a>
+    <a class="header__hamburger hidden" (click)="sidebarOpen()"
+      ><i class="icon ion-navicon"></i
+    ></a>
   </section>
   <section class="header__links">
-    <a *ngIf="isLoggedIn" [routerLink]="['/home']">Home</a>
     <a *ngIf="isLoggedIn" [routerLink]="['/profile']">Profiel</a>
-    <a *ngIf="isLoggedIn" [routerLink]="['/create-sleep-goals']">Slaap doelen</a>
+    <a *ngIf="isLoggedIn" [routerLink]="['/create-sleep-goals']"
+      >Slaap doelen</a
+    >
     <a *ngIf="isLoggedIn" [routerLink]="['/quiz']">Quiz</a>
     <a *ngIf="isLoggedIn" [routerLink]="['/tips-tools']">Tips en Tools</a>
-    <a *ngIf="isLoggedIn" [routerLink]="['/photos-competition']">Fotowedstrijd</a>
-    <a *ngIf="isLoggedIn" [routerLink]="['/calming-sounds']">Kalmerende geluiden</a>
+    <a *ngIf="isLoggedIn" [routerLink]="['/photos-competition']"
+      >Fotowedstrijd</a
+    >
+    <a *ngIf="isLoggedIn" [routerLink]="['/calming-sounds']"
+      >Kalmerende geluiden</a
+    >
     <a *ngIf="!isLoggedIn" [routerLink]="['/login']">Login</a>
     <a *ngIf="!isLoggedIn" [routerLink]="['/register']">Register</a>
-    <a *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+    <a class="logout-button" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
   </section>
 </header>
 

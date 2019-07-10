@@ -3,24 +3,54 @@
     <h1 class="create-photos-competition__main-title">Upload zelf een foto</h1>
   </div>
   <div class="row">
-    <div class="card">
+    <div class="card description">
       <p>Wees creatief! Misschien win je wel!</p>
     </div>
   </div>
   <div>
-    <form class="form" (ngSubmit)="createPhotosCompetition(photo, photo_competition.title, photo_competition.content)">
+    <form
+      class="form"
+      (ngSubmit)="
+        createPhotosCompetition(
+          photo,
+          photo_competition.title,
+          photo_competition.content
+        )
+      "
+    >
       <div class="form__form-label-group">
-        <input type="text" class="form-control" id="InputTitle" placeholder="Je titel" name="title" [(ngModel)]="photo_competition.title">
+        <input
+          type="text"
+          class="form-control"
+          id="InputTitle"
+          placeholder="Je titel"
+          name="title"
+          [(ngModel)]="photo_competition.title"
+        />
       </div>
       <div class="form__form-label-group">
-        <input type="text" class="form-control" id="InputPhoto" placeholder="Je commentaar" name="photo" [(ngModel)]="photo_competition.content">
+        <input
+          type="text"
+          class="form-control"
+          id="InputPhoto"
+          placeholder="Je commentaar"
+          name="photo"
+          [(ngModel)]="photo_competition.content"
+        />
       </div>
-      <input (change)="onFileChange($event) " type="file" name="photo" id="InputPhoto">
+      <input
+        (change)="onFileChange($event)"
+        type="file"
+        name="photo"
+        id="InputPhoto"
+      />
       <div class="form__form-label-group">
         <button type="submit" class="btn-outside">Foto uploaden</button>
       </div>
       <div class="form__form-label-group">
-        <a [routerLink]="['/photos-competition']" class="btn-outside"><i class="icon ion-arrow-left-c"></i></a>
+        <a [routerLink]="['/photos-competition']" class="btn-outside"
+          ><i class="icon ion-arrow-left-c"></i
+        ></a>
       </div>
     </form>
   </div>

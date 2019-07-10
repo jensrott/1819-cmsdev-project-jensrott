@@ -1,13 +1,13 @@
 /* The colors I will use */
-$mainswatch : (
-  bg: #46667F,
-  color-1 : #D9EEFF,
-  color-2: #8CCCFF,
+$mainswatch: (
+  bg: #46667f,
+  color-1: #d9eeff,
+  color-2: #8cccff,
   color-3: #ffffff,
-  color-4: #61ACE9,
-  color-5: #E96B6B,
-  color-6: #BF4407,
-  color-7: #6C777F,
+  color-4: #61ace9,
+  color-5: #e96b6b,
+  color-6: #bf4407,
+  color-7: #6c777f
 );
 
 /* Base styles */
@@ -16,8 +16,8 @@ $ms00: 1 !default;
 $base-margin: 16px;
 $base-padding: 1.5rem;
 
-$primary-font-family: 'Roboto', sans-serif; // Title
-$base-font-family: 'Roboto', sans-serif; // Text 
+$primary-font-family: "Roboto", sans-serif; // Title
+$base-font-family: "Roboto", sans-serif; // Text
 $secondary-font-family: $base-font-family;
 $sans-serif-font-family: sans-serif;
 $serif-font-family: serif;
@@ -32,13 +32,11 @@ $base-color: #444;
 $input-border-radius: 15px;
 $input-border-color: 0.5px solid #697170;
 
+$input-padding: 5px;
 
-$input-padding: 5px; 
-
-
-/* Header styles */ 
+/* Header styles */
 $header-background-color: #fff;
-$header-border-bottom: 0.5px solid #697170; 
+$header-border-bottom: 0.5px solid #697170;
 $headings-line-height: 1.5;
 
 $border-bottom-line: 2px solid map-get($mainswatch, color-8);
@@ -47,17 +45,19 @@ $margin-bottom: 10px;
 $card-background-color: map-get($mainswatch, color-7);
 $card-padding: 20px;
 $card-margin: 30px;
-$card-border-radius: 15px;
-$card-background-boxshadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+$card-border-radius: 1rem;
+$card-background-boxshadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
+  0 0 0 1px rgba(0, 0, 0, 0.08);
+$card-description-boxshadow: 0 3px 13px 0 rgba(0, 0, 0, 0.46),
+  0 0 0 1px rgba(0, 0, 0, 0.08);
 $card-text-color: map-get($mainswatch, color-2);
 
-$button-background-color: map-get($mainswatch, color-5); 
+$button-background-color: map-get($mainswatch, color-5);
 $button-color: #fff;
 $button-border-radius: 23px;
 $button-padding: 15px;
 
 $change-button-color: map-get($mainswatch, color-4);
-$change-background-color: #ffffff; 
+$change-background-color: #ffffff;
 $change-border-color: map-get($mainswatch, color-8);
 $change-button-border: 0.5px solid map-get($mainswatch, color-2);
-
