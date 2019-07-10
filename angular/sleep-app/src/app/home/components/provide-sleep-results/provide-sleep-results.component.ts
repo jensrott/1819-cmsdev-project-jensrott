@@ -28,7 +28,7 @@ export class ProvideSleepResultsComponent implements OnInit {
   private num_acc: any;
   private currentSleepGoal: any;
   private currentSleepGoal1: any;
-  private num = 4;
+  private num = 4; // Calculates the last 5, should be 3 was a mistake
   private i: number;
 
 

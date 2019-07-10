@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-no-sleep-goal',
@@ -8,11 +9,16 @@ import { MatDialogRef } from '@angular/material';
 })
 export class ShowNoSleepGoalComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<ShowNoSleepGoalComponent>) { }
+  constructor(public dialogRef: MatDialogRef<ShowNoSleepGoalComponent>, private router: Router) { }
 
   ngOnInit() {
   }
   onCloseCancel() {
     this.dialogRef.close('Cancel');
+  }
+
+  CreateNewSleepGoal() {
+    this.router.navigate(['/create-sleep-goals']);
+    this.onCloseCancel();
   }
 }

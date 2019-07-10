@@ -18,6 +18,11 @@
     flex-wrap: wrap; 
 }
 
+
+.flex-45 {
+    flex: 0 1 calc(45% - 1em);
+}
+
 .hidden {
     display: none;
 }
@@ -36,7 +41,7 @@
     color: map-get($mainswatch, color-7);
 
     .card-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: bold;
         display: flex;
         justify-content: flex-start;
@@ -85,7 +90,7 @@
     border: 0;
     width: 100%;
     height: auto;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
     text-align: center;

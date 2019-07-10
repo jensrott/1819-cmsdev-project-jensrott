@@ -10,7 +10,8 @@
           <input type="number" id="hours_per_day" name="hours_per_day" placeholder="uren per dag" min="1" max="24"
             [(ngModel)]="sleep_goals.hours_per_day">
           <h1 class="card-title-detail">Tegen?</h1>
-          <input type="date" id="end" name="end_date" min="2019-01-01" max="2019-12-31" [(ngModel)]="sleep_goals.end_date">
+          <!-- <input type="date" id="end" name="end_date" min="2019-01-01" max="2019-12-31" [(ngModel)]="sleep_goals.end_date"> -->
+          <input type="date" id="end" name="end_date" min="2019-01-01" [(ngModel)]="sleep_goals.end_date">
         </div>
       </div>
     </div>

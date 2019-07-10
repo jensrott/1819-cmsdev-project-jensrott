@@ -1,3 +1,10 @@
+@import '../../../../_sass/abstracts/variables';
+
+.description {
+  box-shadow: $card-description-boxshadow;
+  
+}
+
 .form {
   text-align: center;
   display: flex;

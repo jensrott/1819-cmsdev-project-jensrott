@@ -1,4 +1,11 @@
+@import '../../../../_sass/abstracts/mixins';
+@import '../../../../_sass/abstracts/variables';
+
 .cross-close {
     display: flex;
     justify-content: flex-end;
+}
+
+a {
+    color: map-get($mainswatch, color-4);
 }

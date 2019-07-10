@@ -31,7 +31,7 @@ export class HomePageComponent implements OnInit {
   private num_acc: any;
   private currentSleepGoal: any;
   private currentSleepGoal1: any;
-  private num = 2; // The number of days on which the average is calculated, after three days we get a result
+  private num = 4; // The number of days on which the average is calculated, after three days we get a result
   private i: number;
 
   constructor(private authService: AuthenticationService,
@@ -51,29 +51,36 @@ export class HomePageComponent implements OnInit {
   displaySleepStatus(): void {
 
     this.provideSleepResultsService.getCurrentSleepResults().subscribe(data => {  // Get the most recent sleepresults from wordpress
-      this.currentSleepResults = data;
+      this.currentSleepResults = data; // Is an array with all sleep results for the user that is logged in
 
-      this.num_acc = 0;
-      this.accSleepResult = 0;
+      this.num_acc = 0; // Aantal dagen dat je een resultaat hebt
+      this.accSleepResult = 0; // Aantal uren dat je de laatste dagen in totaal geslapen hebt
+
       for (this.i = 0; this.i <= this.num; this.i++) {
         const day1 = moment(`${(this.currentSleepResults[this.i].acf.day)} ${(this.currentSleepResults[this.i].acf.sleep_time)} `,
-          'DD/MM/YYYY hh:mm A');
-        console.log(day1);
-        const day3 = day1.subtract(1, 'days'); // dayTime you went to bed
-        console.log(day3);
+          'DD/MM/YYYY hh:mm A'); // intermediate variable to be able the calculate the correct sleep day
+        console.log(day1); // Datum + uur -> bv. 9 januari 22:00 uur
+
+
+        const day3 = day1.subtract(1, 'days'); // a day earlier then the day you inserted in the database
+        console.log(day3); // Datum + uur -> bv. 8 januari 22:00 uur
         const day2 = moment(`${(this.currentSleepResults[this.i].acf.day)} ${(this.currentSleepResults[this.i].acf.wake_up_time)} `,
-          'DD/MM/YYYY hh:mm A');  // dayTime you woke up
-        console.log(day2);
-        this.currentSleepResult = day2.diff(day3, 'hours', true);  // Number of hours you slept that day
+          'DD/MM/YYYY hh:mm A');
+        console.log(day2); // The day and the hour you woke up -> bv. 9 januari 08:00 uur.
+        this.currentSleepResult = day2.diff(day3, 'hours', true);  // Difference between the wake_up_time (day2) and sleep_time (day3) is 10
         console.log(this.currentSleepResult);
-        this.accSleepResult = this.accSleepResult + this.currentSleepResult;
-        if (this.currentSleepResult != null) {
-          this.num_acc = this.num_acc + 1;
+        this.accSleepResult = this.accSleepResult + this.currentSleepResult; // 0 + 10
+        if (this.currentSleepResult != null) { // If there is a sleep results
+          this.num_acc = this.num_acc + 1; // Add one to the counter
           console.log(this.num_acc);
         }
       }
-      this.averageSleepResult = this.accSleepResult / this.num_acc; // The average number of hours slept the last 5 days.
+
+      // The average number of hours slept the last 3 days. bv. 10 + 10 + 10 = 30 / 3 = 10 uur gemiddeld geslapen
+      this.averageSleepResult = this.accSleepResult / this.num_acc;
+
       localStorage.setItem('averageSleepResult', this.averageSleepResult);
+
 
 
 
@@ -101,7 +108,7 @@ export class HomePageComponent implements OnInit {
         if ((moment(end_date).isBefore(now) || this.currentSleepGoal1 == null)) {  // Add also check for non-existing SleepGoal
           setTimeout(() => this.showNoSleepGoal());
         } else {
-          if (this.averageSleepResult > this.currentSleepGoal1) { // If You sleep more or equal to your goals you made your sleep goal
+          if (this.averageSleepResult >= this.currentSleepGoal1) { // If You sleep more or equal to your goals you made your sleep goal
             setTimeout(() => this.showSuccesDialog()); // Show succes message, you made it!
           } else {
             setTimeout(() => this.showDailySleepStatus()); // Show your current hours slept and how much you still need to
@@ -121,45 +128,45 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  calcAverageSleep() {
-    // Calculates the average sleep value (last week) to display vs the sleepGoal
+  // calcAverageSleep() {
+  //   // Calculates the average sleep value (last week) to display vs the sleepGoal
 
-    // Retrieve all sleep results from wordpress
-    this.provideSleepResultsService.getCurrentSleepResults().subscribe(data => {
-      this.currentSleepResults = data;
+  //   // Retrieve all sleep results from wordpress
+  //   this.provideSleepResultsService.getCurrentSleepResults().subscribe(data => {
+  //     this.currentSleepResults = data;
 
-      const day1 = moment(`${(this.currentSleepResults[0].acf.day)} ${(this.currentSleepResults[0].acf.sleep_time)} `,
-        'DD/MM/YYYY hh:mm A');
-      console.log(day1);
-      const day3 = day1.subtract(1, 'days');
-      console.log(day3);
-      const day2 = moment(`${(this.currentSleepResults[0].acf.day)} ${(this.currentSleepResults[0].acf.wake_up_time)} `,
-        'DD/MM/YYYY hh:mm A');
-      console.log(day2);
-      this.averageSleepResult = day2.diff(day3, 'hours', true);
-      console.log(this.averageSleepResult);
-      localStorage.setItem('averageSleep', this.averageSleepResult);
-    },
-      err => {
-        console.log(err);
-      });
+  //     const day1 = moment(`${(this.currentSleepResults[0].acf.day)} ${(this.currentSleepResults[0].acf.sleep_time)} `,
+  //       'DD/MM/YYYY hh:mm A');
+  //     console.log(day1);
+  //     const day3 = day1.subtract(1, 'days');
+  //     console.log(day3);
+  //     const day2 = moment(`${(this.currentSleepResults[0].acf.day)} ${(this.currentSleepResults[0].acf.wake_up_time)} `,
+  //       'DD/MM/YYYY hh:mm A');
+  //     console.log(day2);
+  //     this.averageSleepResult = day2.diff(day3, 'hours', true);
+  //     console.log(this.averageSleepResult);
+  //     localStorage.setItem('averageSleep', this.averageSleepResult);
+  //   },
+  //     err => {
+  //       console.log(err);
+  //     });
 
-  }
+  // }
 
-  retrieveCurrentSleepGoal() {
+  // retrieveCurrentSleepGoal() {
 
-    this.sleepGoalsService.getCurrentSleepGoal().subscribe(data => {
-      this.currentSleepGoal = data; // All sleepGoals for this user (ordered in time)
-      console.log(this.currentSleepGoal);
-      console.log(this.currentSleepGoal[0].acf.hours_per_day);
-      // this.amount_sleep = 10;
-      // this.sleepgoals = this.sleepGoalsService.getSleepGoal();
-      this.currentSleepGoal1 = this.currentSleepGoal[0].acf.hours_per_day; // the most recent sleepGoal for the user logged in.
-    },
-      err => {
-        console.log(err);
-      });
-  }
+  //   this.sleepGoalsService.getCurrentSleepGoal().subscribe(data => {
+  //     this.currentSleepGoal = data; // All sleepGoals for this user (ordered in time)
+  //     console.log(this.currentSleepGoal);
+  //     console.log(this.currentSleepGoal[0].acf.hours_per_day);
+  //     // this.amount_sleep = 10;
+  //     // this.sleepgoals = this.sleepGoalsService.getSleepGoal();
+  //     this.currentSleepGoal1 = this.currentSleepGoal[0].acf.hours_per_day; // the most recent sleepGoal for the user logged in.
+  //   },
+  //     err => {
+  //       console.log(err);
+  //     });
+  // }
 
 
 

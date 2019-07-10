@@ -1,5 +1,9 @@
 @import '../../../../_sass/abstracts/variables';
 
+.description {
+  box-shadow: $card-description-boxshadow;
+}
+
 .photos-competition {
   .card-image {
     img {
