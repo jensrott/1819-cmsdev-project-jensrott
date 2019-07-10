@@ -47,9 +47,8 @@ $margin-bottom: 10px;
 $card-background-color: map-get($mainswatch, color-7);
 $card-padding: 20px;
 $card-margin: 30px;
-$card-border-radius: 1rem;
+$card-border-radius: 15px;
 $card-background-boxshadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-$card-description-boxshadow: 0 3px 13px 0 rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(0, 0, 0, 0.08);
 $card-text-color: map-get($mainswatch, color-2);
 
 $button-background-color: map-get($mainswatch, color-5); 

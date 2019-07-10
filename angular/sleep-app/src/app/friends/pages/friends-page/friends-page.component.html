@@ -6,10 +6,7 @@
     <div class="card" *ngFor="let friend of friends">
       <div class="friends__head-container">
         <div [innerHTML]="friend?.title.rendered" class="card-title"></div>
-        <div class="card-image">
-          <img src="{{ friend.acf.image_friend }}" alt="image" />
-        </div>
-        <a routerLink="/friends/{{ friend.id }}">Link</a>
+        <div class="card-image"><img src="{{friend.acf.image_friend}}" alt="image"></div>
       </div>
 
       <div [innerHTML]="friend?.content.rendered" class="card-text"></div>

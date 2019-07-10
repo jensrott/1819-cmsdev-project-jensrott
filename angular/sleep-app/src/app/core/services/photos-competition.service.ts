@@ -60,14 +60,13 @@ export class PhotosCompetitionService {
     this.object = {
       title: title,
       content: content,
-      status: 'publish' // Otherwise it still needs to be accepted it is in draft
+      status: 'publish'
     };
     return this._httpClient.post(`${this._apiAddPhotosCompetition}`, this.object, httpOptions);
   }
 
-  // Endpoint: http://localhost/wp-json/acf/v3/photos-competition/{post_id}
-  // Big typo from copy paste needs to be createPhotosCompetitionAcf
-  createSleepGoalAcf(post_id, URL_photo): Observable<any> { /* We need to add the post_id and photo_url we get from adding the photo to the media library */
+  // Endpoint: http://localhost/wp-json/acf/v3/sleep-goals/{post_id}
+  createSleepGoalAcf(post_id, URL_photo): Observable<any> {
     // Adds the image_photo ACF field to the photos-competition post type (URL to the image)
     console.log(this._apiAddAcFPhotos = environment.wpAPI.url + environment.wpAPI.endPoints.acfPhotos_competition);
     const token = localStorage.getItem('token');
@@ -79,7 +78,7 @@ export class PhotosCompetitionService {
     };
 
     this.object = {
-      fields: { // Json string fields need to be put around this.
+      fields: {
         image_photo: URL_photo
       }
     };

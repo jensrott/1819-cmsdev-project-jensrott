@@ -7,32 +7,29 @@
 
 <div class="calming-sounds">
   <div class="row">
-    <h1 class="tips-tools__main-title">Tips en tools</h1>
-  </div>
-  <div class="calming-sounds-flex">
-    <div class="card flex-45">
+    <div class="card">
       <img (click)="checkFire()" src="../../../assets/images/fire.svg" alt="fire">
     </div>
-    <div class="card flex-45">
+    <div class="card">
       <img (click)="checkGarden()" src="../../../assets/images/garden.svg" alt="garden">
     </div>
-    <div class="card flex-45">
+    <div class="card">
       <img (click)="checkRain()" src="../../../assets/images/rain.svg" alt="rain">
     </div>
-    <div class="card flex-45">
+    <div class="card">
       <img (click)="checkSeaSide()" src="../../../assets/images/seaside.svg" alt="seaside">
     </div>
-    <div class="card flex-45">
-      <img (click)="checkStorm()" src="../../../assets/images/storm.svg" alt="storm">
+    <div class="card">
+      <img (click)="checkStorm()" src="../../../assets/images/storm.png" alt="storm">
     </div>
-    <div class="card flex-45">
+    <div class="card">
       <img (click)="checkWind()" src="../../../assets/images/wind.svg" alt="wind">
     </div>
   </div>
-  <div class="calming-sounds-flex">
+  <div class="row">
     <a class="btn-outside" (click)="stopAll()">Pauzeer Allemaal</a>
   </div>
-  <div class="calming-sounds-flex">
+  <div class="row">
     <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
   </div>
 </div>

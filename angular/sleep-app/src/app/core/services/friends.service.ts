@@ -1,16 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "../../../environments/environment";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class FriendsService {
-  private _apiAllFriends =
-    environment.wpAPI.url + environment.wpAPI.endPoints.Friends;
-  private _apiSpecificFriends = "http://localhost/wp-json/wp/v2/friends";
+
+  private _apiAllFriends = environment.wpAPI.url + environment.wpAPI.endPoints.Friends;
 
   private object: any;
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient) { }
 
   // Endpoint: http://localhost/wp-json/wp/v2/friends
   // Retrieve all Friends from the Custom Post Type endpoint
@@ -18,22 +17,15 @@ export class FriendsService {
   // using acf allows to get hold of image
 
   getAllFriends() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     const httpOptions = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
-        "Access-Control-Allow-Origin": "*"
+        'Access-Control-Allow-Origin': '*'
       })
     };
-    return this._httpClient.get<any>(
-      `${this._apiAllFriends}?_embed`,
-      httpOptions
-    );
+    return this._httpClient.get<any>(`${this._apiAllFriends}?_embed`, httpOptions);
   }
 
-  // Endpoint: http://localhost/wp-json/wp/v2/tips-tools/{id}
-  getSpecificFriends(id): Observable<any> {
-    return this._httpClient.get(`${this._apiSpecificFriends}/${id}`);
-  }
 }
