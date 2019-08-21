@@ -12,100 +12,288 @@
     <div class="card">
       <h1 class="card-title-detail">Slaap...</h1>
       <label for="question_1_1">
-        <input type="radio" id="question_1_1" name="question1" value="I &lt;3 it">
+        <input
+          #question_1_1
+          data-text="Terecht dat je gek bent op slaap! Slaap is de max. 
+          Bovendien heeft het een hele hoop voordelen voor je! Je kan je beter concentreren, 
+          hebt een beter humeur, je bent weerbaarder tegen ziektes,… Bovendien leef je op termijn ook gezonder! 
+          Slaaptekort verhoogt namelijk je kansen op het krijgen van diabetes, overgewicht en hartziektes op latere 
+          leeftijd. Sleep on!"
+          type="radio"
+          id="question_1_1"
+          name="question1"
+          (click)="showPopUpText(question_1_1.id)"
+          [(ngModel)]="text"
+          value="I &lt;3 it"
+        />
         I &lt;3 it
       </label>
       <label for="question_1_2">
-        <input type="radio" id="question_1_2" name="question1" value="Is nodig maar ik heb er niet altijd even veel in in...">
+        <input
+          #question_1_2
+          data-text="Voldoende slaap heeft een hele hoop voordelen heeft voor je! 
+        Je kan je beter concentreren, hebt een beter humeur, je bent weerbaarder tegen ziektes,… 
+        Bovendien leef je op termijn ook gezonder! 
+        Slaaptekort verhoogt namelijk je kansen op het krijgen van diabetes, overgewicht en hartziektes op 
+        latere leeftijd. Sleep on!"
+          type="radio"
+          id="question_1_2"
+          name="question1"
+          (click)="showPopUpText(question_1_2.id)"
+          value="Is nodig maar ik heb er niet
+        altijd even veel in in..."
+        />
         Is nodig maar ik heb er niet altijd even veel in in...
       </label>
       <label for="question_1_3">
-        <input type="radio" id="question_1_3" name="question1" value="Zo nutteloos, ik doe liever iets anders!">
+        <input
+          #question_1_3
+          data-text="Denk er aan dat voldoende slaap een hele hoop voordelen heeft voor je! 
+          Je kan je beter concentreren, hebt een beter humeur, je bent weerbaarder tegen ziektes,… 
+          Bovendien leef je op termijn ook gezonder! Slaaptekort verhoogt namelijk je kansen op het krijgen
+          van diabetes, overgewicht en hartziektes op latere leeftijd. Try it!"
+          type="radio"
+          id="question_1_3"
+          name="question1"
+          (click)="showPopUpText(question_1_3.id)"
+          value="Zo nutteloos, ik doe liever iets anders!"
+        />
         Zo nutteloos, ik doe liever iets anders!
       </label>
     </div>
     <div class="card">
       <h1 class="card-title-detail">Lang uitslapen in het weekend...</h1>
       <label for="question_2_1">
-        <input type="radio" id="question_2_1" name="question2" value="Sowiesooo! Mij zie je voor 10u niet
-        verschijnen!">Sowiesooo!
-        Mij zie je voor 10u niet
-        verschijnen!
+        <input
+          #question_2_1
+          data-text="Uitslapen is fijn, dat weet iedereen… toch is het jammer genoeg niet zo goed voor je slaappatroon, 
+          je brengt het namelijk helemaal in de war waardoor je daarna terug moeilijker kan inslapen. 
+          Bovendien zijn de uren die je in de voormiddag bijslaapt, vaak niet zo productief; 
+          je lichaam is immers al in ‘dagmodus’ waardoor je enkel licht slaapt. 
+          Die lichte slaap zorgt ervoor dat je vaak een stuk groggy-er wakker wordt! 
+          Probeer in het weekend niet langer dan 2 uren later op te staan dan het uur waarop je tijdens de week opstaat.  "
+          type="radio"
+          id="question_2_1"
+          name="question2"
+          (click)="showPopUpText(question_2_1.id)"
+          value="Sowiesooo! Mij zie je voor 10u niet
+        verschijnen!"
+        />Sowiesooo! Mij zie je voor 10u niet verschijnen!
       </label>
       <label for="question_2_2">
-        <input type="radio" id="question_2_2" name="question2" value="Hoeft niet, ik word wakker op mijn
-        vast uur.">Hoeft
-        niet, ik word wakker op mijn
-        vast uur.
+        <input
+          #question_2_2
+          data-text="Super dat je steeds op regelmatige tijdstippen opstaat, houden zo! 
+          Regelmaat zorgt er voor dat je steeds makkelijk kan inslapen. "
+          type="radio"
+          id="question_2_2"
+          name="question2"
+          (click)="showPopUpText(question_2_2.id)"
+          value="Hoeft niet, ik word wakker op mijn
+        vast uur."
+        />Hoeft niet, ik word wakker op mijn vast uur.
       </label>
       <label for="question_2_3">
-        <input type="radio" id="question_2_3" name="question2" value="Is voor mij niet later dan 9u-9u30">Is voor mij
-        niet later dan 9u-9u30
+        <input
+          #question_2_3
+          data-text="Uitslapen is fijn, dat weet iedereen… toch is het goed om je slaappatroon zo regelmatig mogelijk te houden. 
+          Uitslapen zorgt er immers voor dat dit patroon in de war geraakt en je ’s avonds moeilijker in slaapt valt. 
+          Bovendien zijn de uren die je in de voormiddag bijslaapt, vaak niet zo productief; 
+          je lichaam is immers al in ‘dagmodus’ waardoor je enkel licht slaapt."
+          type="radio"
+          id="question_2_3"
+          name="question2"
+          (click)="showPopUpText(question_2_3.id)"
+          value="Is voor mij niet later dan 9u-9u30"
+        />Is voor mij niet later dan 9u-9u30
       </label>
     </div>
     <div class="card">
       <h1 class="card-title-detail">Slaap jij makkelijk in?</h1>
       <label for="question_3_1">
-        <input type="radio" id="question_3_1" name="question3" value="Ik lig vaak nog lang te woelen en te piekeren.">
+        <input
+          #question_3_1
+          data-text="Piekeren in bed is niet fijn. 
+          Neem ruim voor je gaat slapen even de tijd om je ‘zorgen’ even op papier te zetten. 
+          Zo kan je die letterlijk aan de kant schuiven wanneer je gaat slapen!"
+          type="radio"
+          id="question_3_1"
+          name="question3"
+          (click)="showPopUpText(question_3_1.id)"
+          value="Ik lig vaak nog lang te woelen en te piekeren."
+        />
         Ik lig vaak nog lang te woelen en te piekeren.
       </label>
       <label for="question_3_2">
-        <input type="radio" id="question_3_2" name="question3" value="Ik slaap relatief snel in.">
+        <input
+          #question_3_2
+          data-text="Voor je gaat slapen is het belangrijk dat je lichaam tot rust komt. 
+          Een slaapritueel kan hierbij helpen: het geeft immers het signaal aan je lichaam dat het tijd is om rustig te worden!"
+          type="radio"
+          id="question_3_2"
+          name="question3"
+          (click)="showPopUpText(question_3_2.id)"
+          value="Ik slaap relatief snel in."
+        />
         Ik slaap relatief snel in.
       </label>
       <label for="question_3_3">
-        <input type="radio" id="question_3_3" name="question3" value="Ik slaap vrijwel meteen in.">
+        <input
+          #question_3_3
+          data-text="Jij valt meteen in slaap wanneer je in je bed kruipt? Zalig!"
+          type="radio"
+          id="question_3_3"
+          name="question3"
+          (click)="showPopUpText(question_3_3.id)"
+          value="Ik slaap vrijwel meteen in."
+        />
         Ik slaap vrijwel meteen in.
       </label>
     </div>
     <div class="card">
       <h1 class="card-title-detail">Ochtendmodus</h1>
       <label for="question_4_1">
-        <input type="radio" id="question_4_1" name="question4" value="Zombie">
+        <input
+          #question_4_1
+          data-text="Wanneer je je ’s ochtends een echte zombie voelt is de kans groot dat je te weinig slaapt. 
+          Probeer er wat vroeger in te kruipen! Verder kunnen ook deze tips helpen: regelmaat (wanneer je steeds op
+          hetzelfde uur opstaat, staat je lichaam hier op ingesteld), niet snoozen (brengt je lichaam in de war, waardoor
+          je hele dag moe kan blijven), veel licht (zodat je lichaam weet dat het ochtend is) en goeie muziek om helemaal
+          vrolijk van te worden!"
+          type="radio"
+          id="question_4_1"
+          name="question4"
+          (click)="showPopUpText(question_4_1.id)"
+          value="Zombie"
+        />
         Zombie
       </label>
       <label for="question_4_2">
-        <input type="radio" id="question_4_2" name="question4" value="Fris als 'n vis">
+        <input
+          #question_4_2
+          data-text="Ochtendmodus: Ready to kick some ass? 
+          Dan heb jij wellicht goed en genoeg geslapen! 
+          Goed bezig!"
+          type="radio"
+          id="question_4_2"
+          name="question4"
+          (click)="showPopUpText(question_4_2.id)"
+          value="Fris als 'n vis"
+        />
         Fris als 'n vis
       </label>
       <label for="question_4_3">
-        <input type="radio" id="question_4_3" name="question4" value="Groggy maar dat gaat snel over">
+        <input
+          #question_4_3
+          data-text="Sommigen voelen zich 's ochtends wat groggy omdat ze te weinig geslapen hebben, anderen omdat ze niet zo goed hebben geslapen.
+          Deze tips kunnen helpen: regelmaat (wanneer je steeds op hetzelfde uur opstaat, staat je lichaam hier op ingesteld),
+          niet snoozen (brengt je lichaam in de war, waardoor je een hele dag moe kan blijven), veel licht (zodat je lichaam weet
+          dat het ochtend is) en goeie muziek om helemaal vrolijk van te worden!"
+          type="radio"
+          id="question_4_3"
+          name="question4"
+          (click)="showPopUpText(question_4_3.id)"
+          value="Groggy maar dat gaat snel over"
+        />
         Groggy maar dat gaat snel over
       </label>
     </div>
     <div class="card">
       <h1 class="card-title-detail">Overdag</h1>
       <label for="question_5_1">
-        <input type="radio" id="question_5_1" name="question5" value="Blijf ik de hele dag door geeuwen.">
+        <input
+          #question_5_1
+          data-text="Wanneer je je overdag steeds vermoeid voelt en op elk moment zou kunnen slapen, wijst dit er op dat je te weinig slaapt
+          of een slechte slaapkwaliteit hebt. Probeer wat meer slaap te halen en mijd schermen voor het slapengaan - het blauwe licht zorgt
+          immers voor een slechte slaapkwaliteit!"
+          type="radio"
+          id="question_5_1"
+          name="question5"
+          (click)="showPopUpText(question_5_1.id)"
+          value="Blijf ik de hele dag door geeuwen."
+        />
         Blijf ik de hele dag door geeuwen.
       </label>
       <label for="question_5_2">
-        <input type="radio" id="question_5_2" name="question5" value="Kom ik er meestal tegen de middag wel door.">
+        <input
+          data-text="Zou jij met plezier om 10u terug in je bed kruipen voor een dutje? Dan slaap jij wellicht toch wat te weinig of heb je een slechte
+          slaapkwaliteit. Probeer wat meer slaap te halen en mij schermen voor het slapengaan - het blauwe licht zorgt immers voor een slechte slaapkwaliteit!"
+          #question_5_2
+          type="radio"
+          id="question_5_2"
+          name="question5"
+          (click)="showPopUpText(question_5_2.id)"
+          value="Kom ik er meestal tegen de middag wel door."
+        />
         Kom ik er meestal tegen de middag wel door.
       </label>
       <label for="question_5_3">
-        <input type="radio" id="question_5_3" name="question5" value="Word ik tegen de avond goed moe.">
+        <input
+          data-text="Overdag fris en monter en tegen s'avonds klaar om te gaan slapen? Je zit in een ideaal ritme."
+          #question_5_3
+          type="radio"
+          id="question_5_3"
+          name="question5"
+          (click)="showPopUpText(question_5_3.id)"
+          value="Word ik tegen de avond goed moe."
+        />
         Word ik tegen de avond goed moe.
       </label>
     </div>
     <div class="card">
       <h1 class="card-title-detail">Screen addict or angel</h1>
       <label for="question_6_1">
-        <input type="radio" id="question_6_1" name="question6" value="#Gamingislive: tot ´s avonds laat!">
+        <input
+          #question_6_1
+          data-text="Denk er aan dat schermgebruik ’s avonds af te raden is om verschillende redenen: 
+          1) het blauwe licht van je scherm zorgt ervoor dat de aanmaak van het slaaphormoon geremd wordt, 
+          waardoor je moeilijker inslaapt en minder diep slaapt.  
+          2) het is verslavend, het houdt je langer wakker dan nodig 
+          3) het geeft je enorm veel extra prikkels, waardoor je niet tot rust kan komen om te slapen. "
+          type="radio"
+          id="question_6_1"
+          name="question6"
+          (click)="showPopUpText(question_6_1.id)"
+          value="#Gamingislive: tot ´s avonds laat!"
+        />
         #Gamingislive: tot ´s avonds laat!
       </label>
       <label for="question_6_2">
-        <input type="radio" id="question_6_2" name="question6" value="#nophone: Mijn GSM komt mijn kamer niet in!">
+        <input
+          #question_6_2
+          data-text="Super dat je verstandig om gaat met schermen 's avonds. Je GSM of andere schermen buiten je kamer
+          houden 's avonds is het beste wat je kan doen voor je slaap. Als je nu ook nog een halfuur tot een uur voor het 
+          slapengaan kan stoppen met schermgebruik, dan doe je het helemaal perfect."
+          type="radio"
+          id="question_6_2"
+          name="question6"
+          (click)="showPopUpText(question_6_2.id)"
+          value="#nophone: Mijn GSM komt mijn kamer niet in!"
+        />
         #nophone: Mijn GSM komt mijn kamer niet in!
       </label>
       <label for="question_6_3">
-        <input type="radio" id="question_6_3" name="question6" value="#Netlix: all night long">
+        <input
+          #question_6_3
+          data-text="Denk er aan dat schermgebruik ’s avonds af te raden is om verschillende redenen: 
+          1) het blauwe licht van je scherm zorgt ervoor dat de aanmaak van het slaaphormoon geremd wordt, 
+          waardoor je moeilijker inslaapt en minder diep slaapt.  
+          2) het is verslavend, het houdt je langer wakker dan nodig 
+          3) het geeft je enorm veel extra prikkels, waardoor je niet tot rust kan komen om te slapen."
+          type="radio"
+          id="question_6_3"
+          name="question6"
+          (click)="showPopUpText(question_6_3.id)"
+          value="#Netlix: all night long"
+        />
         #Netlix: all night long
       </label>
     </div>
   </div>
   <div class="row">
-    <a [routerLink]="['/type-sleeper']" class="btn-outside" (click)="sendQuiz()">Invullen</a>
+    <a [routerLink]="['/type-sleeper']" class="btn-outside" (click)="sendQuiz()"
+      >Resultaat</a
+    >
   </div>
   <div class="row">
     <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>

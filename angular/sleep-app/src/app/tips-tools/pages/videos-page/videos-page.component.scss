@@ -1,0 +1,27 @@
+@import "../../../../_sass/abstracts/variables";
+@import "../../../../_sass/abstracts/helpers";
+
+.tips-tools {
+  &__subtitle-container {
+    a {
+      background-color: map-get($mainswatch, color-1);
+      box-shadow: $card-background-boxshadow;
+      color: map-get($mainswatch, color-7);
+      font-weight: bold;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__heart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .active-link {
+    background-color: red;
+  }
+}

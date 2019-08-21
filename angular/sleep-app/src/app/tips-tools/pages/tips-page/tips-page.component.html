@@ -2,12 +2,32 @@
   <div class="row">
     <h1 class="tips-tools__main-title">Tips en tools</h1>
   </div>
+  <div class="row tips-tools__subtitle-container">
+    <a
+      [routerLink]="['/tips-tools/tips']"
+      routerLinkActive="active-link"
+      class="tips-tools__subtitle"
+      >Tips</a
+    >
+    <a
+      [routerLink]="['/tips-tools/videos']"
+      routerLinkActive="active-link"
+      class="tips-tools__subtitle"
+      >Filmpjes</a
+    >
+    <a
+      [routerLink]="['/tips-tools/memes']"
+      routerLinkActive="active-link"
+      class="tips-tools__subtitle"
+      >Memes</a
+    >
+  </div>
   <div class="row">
     <div class="card" *ngFor="let tip_tool of tips_tools">
       <div [innerHTML]="tip_tool?.title.rendered" class="card-title"></div>
       <div [innerHTML]="tip_tool?.content.rendered" class="card-text"></div>
 
-      <a routerLink="/tips-tools/{{ tip_tool.id }}">Link</a>
+      <a routerLink="/tips-tools/tips/{{ tip_tool.id }}">Detail</a>
 
       <div
         class="tips-tools__heart-container"
@@ -18,10 +38,18 @@
       </div>
     </div>
   </div>
+
+  <!-- For the memes: TODO put in seperate page 
+  https://mememaker.github.io/API/
+  https://api.imgflip.com/ -->
+
   <div class="row">
     <a [routerLink]="['/create-tips-tools']" class="btn-outside">Maak</a>
   </div>
   <div class="row">
     <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
+  </div>
+  <div class="row">
+    <!-- Top button -->
   </div>
 </section>

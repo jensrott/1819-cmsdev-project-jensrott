@@ -4,17 +4,22 @@
       <h1 class="home__main-title">Snoozer</h1>
     </div>
     <div class="home__welcome-message-container">
-      Welkom, <a class="home__logged-in-username" routerLink="/profile"> {{loggedInUser}}</a>
+      Welkom,
+      <a class="home__logged-in-username" routerLink="/profile">
+        {{ loggedInUser }}</a
+      >
     </div>
     <div class="home__welcome-message-container">
-      <button class="home__check-sleep-goal-button" (click)="openDialog()">Geslapen uren ingeven</button>
+      <button class="home__check-sleep-goal-button" (click)="openDialog()">
+        Geslapen uren ingeven
+      </button>
     </div>
     <div class="row">
       <div class="card">
         <h1 class="card-title">Slaap doel</h1>
-        <p class="card-text">Maak een slaap doel aan ! <br>
-          Hoeveel uur wil je gemiddeld tot
-          een bepaalde dag slapen?
+        <p class="card-text">
+          Maak een slaap doel aan ! <br />
+          Hoeveel uur wil je gemiddeld tot een bepaalde dag slapen?
         </p>
         <div class="home__btn-container">
           <a class="btn-card" [routerLink]="['/create-sleep-goals']">Maak</a>
@@ -22,10 +27,9 @@
       </div>
       <div class="card">
         <h1 class="card-title">Quiz</h1>
-        <p class="card-text">Vul de quiz in om je slaapprofiel te
-          verkrijgen. <br>
-          Zo kan je zien welk type
-          slaper je bent !
+        <p class="card-text">
+          Vul de quiz in om je slaapprofiel te verkrijgen. <br />
+          Zo kan je zien welk type slaper je bent !
         </p>
         <div class="home__btn-container">
           <a class="btn-card" [routerLink]="['/quiz']">Quiz</a>
@@ -33,16 +37,20 @@
       </div>
       <div class="card">
         <h1 class="card-title">Tips en tools</h1>
-        <p class="card-text">Even tot rust komen? <br>
+        <p class="card-text">
+          Even tot rust komen? <br />
           Tips voor een beter nachtrust?
         </p>
         <div class="home__btn-container">
-          <a class="btn-card" [routerLink]="['/tips-tools']">Tips</a>
+          <a class="btn-card" [routerLink]="['/tips-tools/tips']">Tips</a>
         </div>
       </div>
       <div class="card">
         <h1 class="card-title">Fotowedstrijd</h1>
-        <p class="card-text">Doe mee aan onze maandelijkse fotowedstrijd<span> #WokeUpLikeThis</span>
+        <p class="card-text">
+          Doe mee aan onze maandelijkse fotowedstrijd<span>
+            #WokeUpLikeThis</span
+          >
         </p>
         <div class="home__btn-container">
           <a class="btn-card" [routerLink]="['/photos-competition']">Ga</a>
@@ -50,7 +58,9 @@
       </div>
       <div class="card">
         <h1 class="card-title">Kalmerende geluiden</h1>
-        <p class="card-text">Luister voor het slapengaan <br> naar rustgevende geluiden
+        <p class="card-text">
+          Luister voor het slapengaan <br />
+          naar rustgevende geluiden
         </p>
         <div class="home__btn-container">
           <a class="btn-card" [routerLink]="['/calming-sounds']">Geluiden</a>

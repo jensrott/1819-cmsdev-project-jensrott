@@ -34,7 +34,7 @@ export class FriendsService {
   }
 
   // Endpoint: http://localhost/wp-json/wp/v2/friends/{id}
-  getSpecificFriends(id): Observable<any> {
+  getSpecificFriend(id): Observable<any> {
     return this._httpClient.get(`${this._apiSpecificFriends}/${id}`);
   }
 }

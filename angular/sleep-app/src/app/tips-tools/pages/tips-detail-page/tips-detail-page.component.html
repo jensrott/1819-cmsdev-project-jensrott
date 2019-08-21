@@ -1,0 +1,21 @@
+<section class="tips-tools">
+  <div class="row">
+    <h1 class="tips-tools__main-title">Tips en tools</h1>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div [innerHTML]="tip.title.rendered" class="card-title"></div>
+      <div [innerHTML]="tip.content.rendered" class="card-text"></div>
+
+      <div class="tips-tools__heart-container">
+        <!-- <i (click)="addLike()" class="icon-heart ion-ios-heart-outline"></i> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <a [routerLink]="['/tips-tools/tips']" class="btn-outside"
+      ><i class="ion-arrow-left-c"></i
+    ></a>
+  </div>
+</section>

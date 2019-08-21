@@ -8,6 +8,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./friends-detail-page.component.scss"]
 })
 export class FriendsDetailPageComponent implements OnInit {
+  friend;
   constructor(
     private friendsService: FriendsService,
     private route: ActivatedRoute
@@ -19,8 +20,13 @@ export class FriendsDetailPageComponent implements OnInit {
 
   getSpecificFriend() {
     const id = this.route.snapshot.paramMap.get("id");
-    this.friendsService.getSpecificFriends(id).subscribe(data => {
-      console.log(data);
-    });
+    this.friendsService.getSpecificFriend(id).subscribe(
+      data => {
+        this.friend = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

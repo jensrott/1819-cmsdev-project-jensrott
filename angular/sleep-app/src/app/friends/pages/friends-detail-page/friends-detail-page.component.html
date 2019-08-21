@@ -1,3 +1,24 @@
-<p>
-  friends-detail-page works!
-</p>
+<section class="friends">
+  <div class="row">
+    <h1 class="friends__main-title">Vriendenlijst</h1>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="friends__head-container">
+        <div [innerHTML]="friend?.title.rendered" class="card-title"></div>
+        <div class="card-image">
+          <img src="{{ friend.acf.image_friend }}" alt="image" />
+        </div>
+        <div>
+          Leaflet map
+        </div>
+      </div>
+      <div [innerHTML]="friend?.content.rendered" class="card-text"></div>
+    </div>
+  </div>
+  <div class="row">
+    <a [routerLink]="['/friends']" class="btn-outside"
+      ><i class="ion-arrow-left-c"></i
+    ></a>
+  </div>
+</section>
