@@ -34,7 +34,12 @@
         *ngFor="let author of tip_tool._embedded.author"
       >
         <p>Door : {{ author.name }}</p>
-        <i (click)="addLike()" class="icon-heart ion-ios-heart-outline"></i>
+        <!-- <i (click)="addLike()" class="icon-heart ion-ios-heart-outline"></i> -->
+        <!-- <div (click)="!(show = show)"> -->
+        <div (click)="toggle()">
+          <i *ngIf="show" class="icon-heart ion-ios-heart-outline"></i>
+          <i *ngIf="!show" class="icon-heart ion-ios-heart"></i>
+        </div>
       </div>
     </div>
   </div>

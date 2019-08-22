@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { User } from "../../../core/models/User";
 import { MatDialog, MatDialogRef } from "@angular/material";
 import { QuizAnswersComponent } from "../../components/quiz-answers/quiz-answers.component";
+import { QuizEmptyAnswersComponent } from "../../components/quiz-empty-answers/quiz-empty-answers.component";
 
 @Component({
   selector: "app-quiz-page",
@@ -44,7 +46,7 @@ export class QuizPageComponent implements OnInit {
     sleeptype_image: ""
   };
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private router: Router) {}
 
   ngOnInit() {}
 
@@ -107,15 +109,32 @@ export class QuizPageComponent implements OnInit {
       }
     });
 
-    // We give the answer as a parameter
-    this.determineSleepType(
-      this.answer1,
-      this.answer2,
-      this.answer3,
-      this.answer4,
-      this.answer5,
-      this.answer6
-    );
+    if (this.checkInputs()) {
+      // if we selected any radio buttons
+
+      // We give the answer as a parameter
+      this.determineSleepType(
+        this.answer1,
+        this.answer2,
+        this.answer3,
+        this.answer4,
+        this.answer5,
+        this.answer6
+      );
+      // Navigate to the next page
+      this.router.navigate(["/type-sleeper"]);
+    } else {
+      // If we didn't select any radio button
+      // Show pop up and block the navigation
+      const dialogRef = this.dialog.open(QuizEmptyAnswersComponent, {
+        width: "500px",
+        data: { text: this.questionText } /* Show the text in the dialog box */
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log("Close");
+      });
+      dialogRef.updatePosition({ top: "150px", left: "30px" });
+    }
   }
 
   showPopUpText(question) {
@@ -133,6 +152,18 @@ export class QuizPageComponent implements OnInit {
       console.log("Close");
     });
     dialogRef.updatePosition({ top: "150px", left: "30px" });
+  }
+
+  checkInputs() {
+    let inputs = document.getElementsByTagName("input");
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i].checked) {
+        console.log("good to go");
+        return true;
+      }
+    }
+    console.log("woops nothing selected");
+    return false;
   }
 
   /* Spaghetti Macaroni code I am sorry ;) */

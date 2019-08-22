@@ -12,6 +12,8 @@ export class TipsPageComponent implements OnInit {
   tips_tools;
   users;
 
+  show: boolean = true;
+
   constructor(private tipstoolsService: TipsToolsService) {}
 
   ngOnInit() {
@@ -48,4 +50,10 @@ export class TipsPageComponent implements OnInit {
     this.icon.classList.remove("ion-ios-heart");
     this.icon.classList.add("ion-ios-heart-outline");
   }
+
+  toggle() {
+    this.show = !this.show;
+  }
+
+  calculateMostLikes() {}
 }
