@@ -29,7 +29,6 @@ export class MemesPageComponent implements OnInit {
       // console.log(data);
       this.memes = data.data;
       this.lessMemes = this.memes.memes.splice(90);
-      // console.log(this.lessMemes); // TODO more or less memes filter
     });
   }
 

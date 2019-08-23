@@ -1,3 +1,4 @@
+<!-- TODO better styling -->
 <section class="friends">
   <div class="row">
     <h1 class="friends__main-title">Vriendenlijst</h1>
@@ -9,7 +10,7 @@
         <div class="card-image">
           <img src="{{ friend.acf.image_friend }}" alt="image" />
         </div>
-        <a routerLink="/friends/{{ friend.id }}">Link</a>
+        <a routerLink="/friends/{{ friend.id }}">Detail</a>
       </div>
 
       <div [innerHTML]="friend?.content.rendered" class="card-text"></div>

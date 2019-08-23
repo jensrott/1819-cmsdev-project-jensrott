@@ -22,7 +22,8 @@
   }
 
   .active-link {
-    background-color: red;
+    background-color: map-get($mainswatch, color-6);
+    color: map-get($mainswatch, white-color);
   }
 
   .memes-title {

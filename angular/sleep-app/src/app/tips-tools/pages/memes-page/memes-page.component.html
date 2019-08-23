@@ -39,19 +39,18 @@
       <div class="card" *ngFor="let moreMeme of moreMemes">
         <!-- Data is from a different memes api -->
         <p class="memes-title">{{ moreMeme.name }}</p>
-        <p>{{ moreMeme.rank }}</p>
         <img class="memes-img" src="{{ moreMeme.image }}" alt="meme-img" />
       </div>
     </div>
+  </div>
+  <div class="row">
+    <a (click)="showMoreMemes()" class="btn-outside">Meer memes</a>
   </div>
   <div class="row">
     <a [routerLink]="['/create-tips-tools']" class="btn-outside">Maak</a>
   </div>
   <div class="row">
     <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
-  </div>
-  <div class="row">
-    <a (click)="showMoreMemes()" class="btn-outside">Meer memes</a>
   </div>
   <div class="row">
     <!-- Back to top button todo... -->

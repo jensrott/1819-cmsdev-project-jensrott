@@ -7,6 +7,7 @@
       [routerLink]="['/tips-tools/tips']"
       routerLinkActive="active-link"
       class="tips-tools__subtitle"
+      (click)="getAllTipsTools()"
       >Tips</a
     >
     <a
@@ -22,17 +23,14 @@
       >Memes</a
     >
   </div>
-  <!-- <a (click)="filterByAuthor()" class="tips-tools__subtitle">Sorteren</a> -->
   <div class="row">
     <button *ngFor="let tip_tool of tips_tools">
-      <!-- <div (click)="filterByAuthor()"> -->
       <p
         (click)="filterByAuthor(author.id)"
         *ngFor="let author of tip_tool._embedded.author"
       >
         {{ author.name }}
       </p>
-      <!-- </div> -->
     </button>
   </div>
   <div *ngIf="!newFilteredData" class="row">
@@ -76,11 +74,6 @@
       </div> -->
     </div>
   </div>
-
-  <!-- For the memes: TODO put in seperate page 
-  https://mememaker.github.io/API/
-  https://api.imgflip.com/ -->
-
   <div class="row">
     <a [routerLink]="['/create-tips-tools']" class="btn-outside">Maak</a>
   </div>

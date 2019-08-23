@@ -8,13 +8,15 @@ import { DomSanitizer } from "@angular/platform-browser";
   styleUrls: ["./videos-page.component.scss"]
 })
 export class VideosPageComponent implements OnInit {
-  safeURL;
-  videoURL;
+  videoURLs: Array<String>;
   constructor(private _sanitizer: DomSanitizer) {
-    this.videoURL = "https://www.youtube.com/embed/1ozGKlOzEVc";
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
-      this.videoURL
-    );
+    this.videoURLs = [
+      "https://www.youtube.com/embed/ZKNQ6gsW45M",
+      "https://www.youtube.com/embed/g1CWinr5AkI",
+      "https://www.youtube.com/embed/EiYm20F9WXU",
+      "https://www.youtube.com/embed/3eLfn7Ewx_s",
+      "https://www.youtube.com/embed/2wLCzrfdUOI"
+    ];
   }
 
   ngOnInit() {}

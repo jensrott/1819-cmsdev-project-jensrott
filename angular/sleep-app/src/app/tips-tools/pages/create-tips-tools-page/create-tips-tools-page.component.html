@@ -4,23 +4,44 @@
   </div>
   <div class="row">
     <div class="card">
-      <p>Zorg ervoor dat je tip duidelijk <br>
-        leesbaar en goed begrijpbaar is. </p>
+      <p>
+        Zorg ervoor dat je tip duidelijk <br />
+        leesbaar en goed begrijpbaar is.
+      </p>
     </div>
   </div>
   <div>
-    <form class="form" (ngSubmit)="createTipsTools(tip_tool.title, tip_tool.content)">
+    <form
+      class="form"
+      (ngSubmit)="createTipsTools(tip_tool.title, tip_tool.content)"
+    >
       <div class="form__form-label-group">
-        <input type="text" class="form-control" id="InputTitle" placeholder="Je titel" name="title" [(ngModel)]="tip_tool.title">
+        <input
+          type="text"
+          class="form-control"
+          id="InputTitle"
+          placeholder="Je titel"
+          name="title"
+          [(ngModel)]="tip_tool.title"
+        />
       </div>
       <div class="form__form-label-group">
-        <input type="text" class="form-control" id="InputText" placeholder="Je tekst" name="text" [(ngModel)]="tip_tool.content">
+        <input
+          type="text"
+          class="form-control"
+          id="InputText"
+          placeholder="Je tekst"
+          name="text"
+          [(ngModel)]="tip_tool.content"
+        />
       </div>
       <div class="form__form-label-group">
         <button type="submit" class="btn-outside">Maak</button>
       </div>
       <div class="form__form-label-group">
-        <a [routerLink]="['/tips-tools']" class="btn-outside"><i class="icon ion-arrow-left-c"></i></a>
+        <a [routerLink]="['/tips-tools/tips']" class="btn-outside"
+          ><i class="icon ion-arrow-left-c"></i
+        ></a>
       </div>
     </form>
   </div>

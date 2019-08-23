@@ -22,22 +22,17 @@
       >Memes</a
     >
   </div>
-  <!-- TODO: put in seperate page -->
   <div class="row">
-    <div class="card">
+    <div class="card" *ngFor="let videoURL of videoURLs">
       <iframe
         width="100%"
         height="315"
-        [src]="safeURL"
+        [src]="_sanitizer.bypassSecurityTrustResourceUrl(videoURL)"
         frameborder="0"
         allowfullscreen
       ></iframe>
     </div>
   </div>
-
-  <!-- For the memes: TODO put in seperate page 
-  https://mememaker.github.io/API/
-  https://api.imgflip.com/ -->
 
   <div class="row">
     <a [routerLink]="['/create-tips-tools']" class="btn-outside">Maak</a>

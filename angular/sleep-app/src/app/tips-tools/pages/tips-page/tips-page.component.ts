@@ -15,7 +15,7 @@ export class TipsPageComponent implements OnInit {
   users;
 
   // filter data by author
-  filteredDatas;
+  filteredDatas: Array<Object>;
   newFilteredData: boolean = false;
 
   show: boolean = true;
@@ -29,6 +29,7 @@ export class TipsPageComponent implements OnInit {
   searchTipsTools(term) {}
 
   getAllTipsTools() {
+    this.newFilteredData = false;
     this.tipstoolsService.getAllTipsTools().subscribe(
       data => {
         let sortedData = _.orderBy(data, ["date_gmt"], ["asc"]); // Sort by date
@@ -69,7 +70,7 @@ export class TipsPageComponent implements OnInit {
     this.newFilteredData = true;
     this.tipstoolsService.filterByAuthor(id).subscribe(data => {
       console.log(data);
-      let sortedData = _.orderBy(data, ["date_gmt"], ["asc"]); // Sort by date, TODO: find a way I can put this in one place so I don't need to place this always again
+      let sortedData = _.orderBy(data, ["date_gmt"], ["asc"]); // Sort by date
       this.filteredDatas = sortedData; // Now we have to replace all the data that is now there with this data
     });
   } // Can make it later sort by anything else
