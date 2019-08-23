@@ -22,7 +22,20 @@
       >Memes</a
     >
   </div>
+  <!-- <a (click)="filterByAuthor()" class="tips-tools__subtitle">Sorteren</a> -->
   <div class="row">
+    <button *ngFor="let tip_tool of tips_tools">
+      <!-- <div (click)="filterByAuthor()"> -->
+      <p
+        (click)="filterByAuthor(author.id)"
+        *ngFor="let author of tip_tool._embedded.author"
+      >
+        {{ author.name }}
+      </p>
+      <!-- </div> -->
+    </button>
+  </div>
+  <div *ngIf="!newFilteredData" class="row">
     <div class="card" *ngFor="let tip_tool of tips_tools">
       <div [innerHTML]="tip_tool?.title.rendered" class="card-title"></div>
       <div [innerHTML]="tip_tool?.content.rendered" class="card-text"></div>
@@ -41,6 +54,26 @@
           <i *ngIf="!show" class="icon-heart ion-ios-heart"></i>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="newFilteredData">
+    <!-- If we filter on a name, we show the new data based on the id -->
+    <div class="card" *ngFor="let filteredData of filteredDatas">
+      <div [innerHTML]="filteredData?.title.rendered" class="card-title"></div>
+      <div [innerHTML]="filteredData?.content.rendered" class="card-text"></div>
+
+      <a routerLink="/tips-tools/tips/{{ filteredData.id }}">Detail</a>
+
+      <!-- <div
+        class="tips-tools__heart-container"
+        *ngFor="let author of tip_tool._embedded.author"
+      >
+        <p>Door : {{ author.name }}</p>
+        <div (click)="toggle()">
+          <i *ngIf="show" class="icon-heart ion-ios-heart-outline"></i>
+          <i *ngIf="!show" class="icon-heart ion-ios-heart"></i>
+        </div>
+      </div> -->
     </div>
   </div>
 
