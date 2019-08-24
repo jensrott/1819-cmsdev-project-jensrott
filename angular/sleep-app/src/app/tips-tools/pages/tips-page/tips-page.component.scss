@@ -13,6 +13,17 @@
       border-radius: 1rem;
       font-size: 1rem;
     }
+
+    button {
+      background-color: map-get($mainswatch, color-1);
+      box-shadow: $card-background-boxshadow;
+      color: map-get($mainswatch, color-7);
+      font-weight: bold;
+      padding: 0.4rem;
+      margin: 0.2rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+    }
   }
 
   &__heart-container {

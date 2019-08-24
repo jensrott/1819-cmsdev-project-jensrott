@@ -151,7 +151,7 @@ export class QuizPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log("Close");
     });
-    dialogRef.updatePosition({ top: "150px", left: "30px" });
+    dialogRef.updatePosition({ top: "30px", left: "30px" });
   }
 
   checkInputs() {
