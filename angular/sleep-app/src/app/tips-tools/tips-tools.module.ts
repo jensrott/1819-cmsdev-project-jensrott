@@ -8,8 +8,8 @@ import { CreateTipsToolsPageComponent } from "./pages/create-tips-tools-page/cre
 import { TipsDetailPageComponent } from "./pages/tips-detail-page/tips-detail-page.component";
 import { VideosPageComponent } from "./pages/videos-page/videos-page.component";
 import { MemesPageComponent } from "./pages/memes-page/memes-page.component";
-import { VideosDetailPageComponent } from './pages/videos-detail-page/videos-detail-page.component';
-import { MemesDetailPageComponent } from './pages/memes-detail-page/memes-detail-page.component';
+import { VideosDetailPageComponent } from "./pages/videos-detail-page/videos-detail-page.component";
+import { MemesDetailPageComponent } from "./pages/memes-detail-page/memes-detail-page.component";
 
 @NgModule({
   imports: [CommonModule, FormsModule, AppRoutingModule],

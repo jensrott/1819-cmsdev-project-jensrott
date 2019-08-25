@@ -74,4 +74,13 @@ export class TipsPageComponent implements OnInit {
       this.filteredDatas = sortedData; // Now we have to replace all the data that is now there with this data
     });
   } // Can make it later sort by anything else
+
+  SortByDateClick() {
+    this.newFilteredData = true;
+    this.tipstoolsService.getAllTipsTools().subscribe(data => {
+      console.log(data);
+      let sortedData = _.orderBy(data, ["date_gmt"], ["desc"]); // Sort by date
+      this.filteredDatas = sortedData; // Now we have to replace all the data that is now there with this data
+    });
+  }
 }

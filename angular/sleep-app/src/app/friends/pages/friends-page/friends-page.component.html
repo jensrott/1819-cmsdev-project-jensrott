@@ -10,8 +10,8 @@
         <div class="card-image">
           <img src="{{ friend.acf.image_friend }}" alt="image" />
         </div>
-        <a routerLink="/friends/{{ friend.id }}">Detail</a>
       </div>
+      <a routerLink="/friends/{{ friend.id }}">Profiel</a>
 
       <div [innerHTML]="friend?.content.rendered" class="card-text"></div>
     </div>

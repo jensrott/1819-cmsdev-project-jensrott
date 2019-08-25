@@ -9,8 +9,22 @@
         <div class="card-image">
           <img src="{{ friend.acf.image_friend }}" alt="image" />
         </div>
-        <div>
-          Leaflet map
+        <div
+          style="position:relative; width:100%; height:0px; padding-bottom:56.25%"
+        >
+          <iframe
+            [src]="displayLatitudeLongitude()"
+            width="600"
+            height="450"
+            frameborder="0"
+            style="position:absolute; left:0; top:0; width:100%; height:100%"
+            allowfullscreen=""
+          ></iframe>
+          <!-- <a
+            href="https://www.latlong.net/c/?lat=51.007069&long=3.885180"
+            target="_blank"
+            >(51.007069, 3.885180)</a
+          > -->
         </div>
       </div>
       <div [innerHTML]="friend?.content.rendered" class="card-text"></div>

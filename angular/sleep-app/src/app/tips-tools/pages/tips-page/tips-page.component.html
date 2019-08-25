@@ -33,6 +33,14 @@
       </p>
     </button>
   </div>
+  <div class="row tips-tools__subtitle-container">
+    <button *ngIf="!newFilteredData" (click)="SortByDateClick()">
+      Sorteren op datum (aflopend)
+    </button>
+    <button *ngIf="newFilteredData" (click)="getAllTipsTools()">
+      Sorten op datum(oplopend)
+    </button>
+  </div>
   <div *ngIf="!newFilteredData" class="row">
     <div class="card" *ngFor="let tip_tool of tips_tools">
       <div [innerHTML]="tip_tool?.title.rendered" class="card-title"></div>
