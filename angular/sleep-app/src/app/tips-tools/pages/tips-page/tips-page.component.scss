@@ -36,4 +36,23 @@
     background-color: map-get($mainswatch, color-6);
     color: map-get($mainswatch, white-color);
   }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    margin: 8rem 0;
+  }
+
+  .arrow-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0rem 1.5rem;
+    padding: 0rem 1.5rem;
+    div {
+      i {
+        font-size: 3rem;
+        color: map-get($mainswatch, color-1);
+      }
+    }
+  }
 }

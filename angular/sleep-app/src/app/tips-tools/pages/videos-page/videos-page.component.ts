@@ -9,6 +9,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class VideosPageComponent implements OnInit {
   videoURLs: Array<string>;
+
   constructor(private _sanitizer: DomSanitizer) {
     this.videoURLs = [
       "https://www.youtube.com/embed/ZKNQ6gsW45M",

@@ -33,13 +33,16 @@
       </p>
     </button>
   </div>
-  <div class="row tips-tools__subtitle-container">
-    <button *ngIf="!newFilteredData" (click)="SortByDateClick()">
-      Sorteren op datum (aflopend)
-    </button>
-    <button *ngIf="newFilteredData" (click)="getAllTipsTools()">
-      Sorten op datum(oplopend)
-    </button>
+  <div class="row tips-tools__subtitle-container arrow-container">
+    <div *ngIf="!newFilteredData" (click)="SortByDateClick()">
+      <i class="ion-arrow-up-c"></i>
+    </div>
+    <div *ngIf="newFilteredData" (click)="getAllTipsTools()">
+      <i class="ion-arrow-down-c"></i>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loading-container">
+    <app-loader></app-loader>
   </div>
   <div *ngIf="!newFilteredData" class="row">
     <div class="card" *ngFor="let tip_tool of tips_tools">

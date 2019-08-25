@@ -34,6 +34,9 @@
       />
     </div>
   </div>
+  <div *ngIf="loading" class="loading-container">
+    <app-loader></app-loader>
+  </div>
   <div *ngIf="showMore">
     <div class="row">
       <div class="card" *ngFor="let moreMeme of moreMemes">
@@ -51,8 +54,5 @@
   </div>
   <div class="row">
     <a [routerLink]="['/home']" class="btn-outside"><i class="ion-home"></i></a>
-  </div>
-  <div class="row">
-    <!-- Back to top button todo... -->
   </div>
 </section>

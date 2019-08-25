@@ -20,6 +20,8 @@ export class TipsPageComponent implements OnInit {
 
   show: boolean = true;
 
+  loading: boolean = true;
+
   constructor(private tipstoolsService: TipsToolsService) {}
 
   ngOnInit() {
@@ -38,6 +40,7 @@ export class TipsPageComponent implements OnInit {
         // console.log(this.tips_tools);
         // console.log(this.tips_tools[0].title);
         // this.tips_tools1 = this.tips_tools;
+        this.loading = false;
       },
       err => {
         console.log(err);
@@ -45,7 +48,6 @@ export class TipsPageComponent implements OnInit {
     );
   }
 
-  // TODO Fix this
   addLike() {
     this.icon = document.querySelector(".icon-heart");
     console.log(this.icon);
@@ -68,19 +70,25 @@ export class TipsPageComponent implements OnInit {
   filterByAuthor(id: number) {
     // console.log(id); // now we use this id to filter and we make a new request
     this.newFilteredData = true;
+    this.loading = true;
     this.tipstoolsService.filterByAuthor(id).subscribe(data => {
       console.log(data);
       let sortedData = _.orderBy(data, ["date_gmt"], ["asc"]); // Sort by date
       this.filteredDatas = sortedData; // Now we have to replace all the data that is now there with this data
+
+      this.loading = false;
     });
   } // Can make it later sort by anything else
 
   SortByDateClick() {
     this.newFilteredData = true;
+    this.loading = true;
     this.tipstoolsService.getAllTipsTools().subscribe(data => {
       console.log(data);
       let sortedData = _.orderBy(data, ["date_gmt"], ["desc"]); // Sort by date
       this.filteredDatas = sortedData; // Now we have to replace all the data that is now there with this data
+
+      this.loading = false;
     });
   }
 }

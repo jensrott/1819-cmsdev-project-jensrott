@@ -12,16 +12,13 @@ export class MemesPageComponent implements OnInit {
   memes;
   lessMemes;
   moreMemes;
-  loading: boolean = false;
+  loading: boolean = true;
   showMore: boolean = false;
-
-  // TODO: add loading!!!
 
   constructor(private _memesService: MemesService) {}
 
   ngOnInit() {
     this.getMemes();
-    // this.showMoreMemes();
   }
 
   getMemes() {
@@ -29,20 +26,24 @@ export class MemesPageComponent implements OnInit {
       // console.log(data);
       this.memes = data.data;
       this.lessMemes = this.memes.memes.splice(90);
+      this.loading = false;
     });
   }
 
   showMoreMemes() {
     // Other memes api
     this.showMore = true;
+    this.loading = true;
     this._memesService.getMoreMemes().subscribe(data => {
       console.log(data);
       this.memes = data.data;
       // console.log(this.memes);
-      // Random number between 10 en 20
+      /* Random number between 1 en 20 */
       let randomNumber = Math.floor(Math.random() * 20) + 1;
       console.log(randomNumber);
       this.moreMemes = this.memes.splice(randomNumber);
+
+      this.loading = false;
 
       // With rank we can sort maybe...
     });

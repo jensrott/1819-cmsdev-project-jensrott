@@ -127,8 +127,8 @@ export class QuizPageComponent implements OnInit {
       // If we didn't select any radio button
       // Show pop up and block the navigation
       const dialogRef = this.dialog.open(QuizEmptyAnswersComponent, {
-        width: "500px",
-        data: { text: this.questionText } /* Show the text in the dialog box */
+        width: "500px"
+        // data: { text: this.questionText } /* Show the text in the dialog box */
       });
       dialogRef.afterClosed().subscribe(result => {
         console.log("Close");

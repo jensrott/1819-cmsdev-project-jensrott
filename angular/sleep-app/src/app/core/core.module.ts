@@ -21,6 +21,7 @@ import { ProvideSleepResultsService } from "./services/provide-sleep-results.ser
 import { FriendsService } from "./services/friends.service";
 import { MemesService } from "./services/memes.service";
 import { VideosService } from "./services/videos.service";
+import { LoaderComponent } from "./components/loader/loader.component";
 
 @NgModule({
   imports: [CommonModule, AppRoutingModule, FormsModule],
@@ -30,9 +31,15 @@ import { VideosService } from "./services/videos.service";
     NotFoundPageComponent,
     LoginComponent,
     RegisterComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoaderComponent
   ],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    LoaderComponent
+  ],
   providers: [
     AuthenticationService,
     TipsToolsService,
